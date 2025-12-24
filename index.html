@@ -447,6 +447,271 @@
       display: block;
     }
     
+    /* ========== COMO FUNCIONA TUTTS ========== */
+    .como-funciona-tutts {
+      padding: 80px 5%;
+      background: var(--cinza-light);
+    }
+    
+    .tutts-intro {
+      max-width: 900px;
+      margin: 0 auto 50px;
+      text-align: center;
+    }
+    
+    .tutts-intro p {
+      font-size: 18px;
+      color: var(--cinza);
+      line-height: 1.7;
+    }
+    
+    .modalidades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+    }
+    
+    .modalidade-card {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 32px;
+      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.08);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .modalidade-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--roxo), var(--laranja));
+    }
+    
+    .modalidade-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(85, 7, 118, 0.15);
+    }
+    
+    .modalidade-card .emoji {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .modalidade-card h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--roxo);
+      margin-bottom: 16px;
+    }
+    
+    .modalidade-card p {
+      color: var(--cinza);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    
+    /* Seção Baú */
+    .bau-section {
+      background: white;
+      border-radius: 24px;
+      padding: 50px;
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.08);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .bau-content h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      color: var(--roxo);
+      margin-bottom: 20px;
+    }
+    
+    .bau-content > p {
+      color: var(--cinza);
+      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
+    
+    .bau-beneficios {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .bau-beneficios li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      color: #333;
+      font-size: 16px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .bau-beneficios li:last-child {
+      border-bottom: none;
+    }
+    
+    .bau-beneficios li::before {
+      content: '✓';
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, var(--laranja), var(--laranja-light));
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+    
+    .bau-image {
+      position: relative;
+    }
+    
+    .bau-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
+    }
+    
+    /* Seção Incentivos */
+    .incentivos-section {
+      background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-dark) 100%);
+      border-radius: 24px;
+      padding: 50px;
+      max-width: 1100px;
+      margin: 0 auto;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .incentivos-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: var(--laranja);
+      border-radius: 50%;
+      opacity: 0.1;
+      filter: blur(80px);
+    }
+    
+    .incentivos-section h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .incentivos-section > p {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+      max-width: 800px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .incentivos-alerta {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.2);
+      position: relative;
+      z-index: 1;
+    }
+    
+    .incentivos-alerta h4 {
+      font-size: 18px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .incentivos-alerta ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+    
+    .incentivos-alerta li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      opacity: 0.95;
+    }
+    
+    .incentivos-alerta li::before {
+      content: '→';
+      color: var(--laranja);
+      font-weight: 700;
+    }
+    
+    .incentivos-alerta .destaque {
+      background: var(--laranja);
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    @media (max-width: 768px) {
+      .bau-section {
+        grid-template-columns: 1fr;
+        padding: 30px 24px;
+        gap: 30px;
+      }
+      
+      .bau-image {
+        order: -1;
+      }
+      
+      .bau-content h3 {
+        font-size: 28px;
+      }
+      
+      .incentivos-section {
+        padding: 30px 24px;
+      }
+      
+      .incentivos-section h3 {
+        font-size: 28px;
+      }
+      
+      .modalidades-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .modalidade-card {
+        padding: 30px 24px;
+      }
+    }
+    
     /* ========== REGIÕES ========== */
     .regioes {
       padding: 80px 5%;
@@ -840,6 +1105,69 @@
         allowfullscreen
         loading="lazy">
       </iframe>
+    </div>
+  </section>
+  
+  <!-- COMO FUNCIONA TUTTS - SEÇÃO DETALHADA -->
+  <section class="como-funciona-tutts" id="detalhes">
+    <h2 class="section-title animate-on-scroll">Conheça como funciona a Tutts 🚀</h2>
+    
+    <div class="tutts-intro animate-on-scroll">
+      <p>Na Tutts, você atua de forma autônoma, com flexibilidade e oportunidades reais de ganho, em um modelo pensado especialmente para o segmento de peças automotivas.</p>
+    </div>
+    
+    <!-- Modalidades de Trabalho -->
+    <h3 class="section-title animate-on-scroll" style="font-size: clamp(28px, 6vw, 40px); margin-bottom: 30px;">🔹 Modelo de trabalho</h3>
+    <p class="section-subtitle animate-on-scroll">Na Tutts, você pode rodar em duas modalidades:</p>
+    
+    <div class="modalidades-grid">
+      <div class="modalidade-card animate-on-scroll">
+        <span class="emoji">☁️</span>
+        <h3>Modalidade Nuvem</h3>
+        <p>Você permanece online no aplicativo e recebe pedidos eventuais, que aparecem diretamente na sua tela. Ideal para quem busca flexibilidade e quer rodar conforme a disponibilidade.</p>
+      </div>
+      
+      <div class="modalidade-card animate-on-scroll">
+        <span class="emoji">🏪</span>
+        <h3>Modalidade Dedicada</h3>
+        <p>Nessa modalidade, a demanda é direcionada para você durante o horário de atendimento da loja parceira em que está atuando. É uma operação mais previsível, com fluxo constante de entregas.</p>
+      </div>
+    </div>
+    
+    <!-- Seção Baú -->
+    <div class="bau-section animate-on-scroll">
+      <div class="bau-content">
+        <h3>🔹 Necessidade de Baú</h3>
+        <p>Como o foco das entregas da Tutts é o transporte de peças automotivas, <strong>não é permitido o uso de bags</strong>. É obrigatório o uso de baú ou caixote na motocicleta.</p>
+        <p><strong>Essa exigência garante:</strong></p>
+        <ul class="bau-beneficios">
+          <li>Maior segurança no transporte</li>
+          <li>Capacidade de levar maior volume de peças</li>
+          <li>Mais entregas por rota</li>
+          <li>Potencialização dos seus ganhos</li>
+        </ul>
+      </div>
+      <div class="bau-image">
+        <img src="moto-bau.png" alt="Moto com baú para entregas Tutts">
+      </div>
+    </div>
+    
+    <!-- Seção Incentivos -->
+    <div class="incentivos-section animate-on-scroll">
+      <h3>🎯 Sistema de Incentivos e Promoções</h3>
+      <p>A Tutts conta com um sistema de incentivos progressivos, liberado conforme você avança nos conteúdos e se mantém ativo na operação.</p>
+      
+      <div class="incentivos-alerta">
+        <h4>📢 Fique atento:</h4>
+        <ul>
+          <li>Aos grupos oficiais</li>
+          <li>Aos status</li>
+          <li>Aos avisos publicados na Central do Entregador Tutts</li>
+        </ul>
+        <div class="destaque">
+          🚀 A Tutts está sempre lançando promoções e incentivos para impulsionar seus ganhos. Acompanhe de perto e aproveite cada oportunidade!
+        </div>
+      </div>
     </div>
   </section>
   
