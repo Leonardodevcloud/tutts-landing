@@ -100,7 +100,9 @@
     }
     
     .logo {
-      height: 50px;
+      height: 70px;
+      max-width: 180px;
+      object-fit: contain;
       filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
       animation: fadeInDown 0.8s ease-out;
     }
@@ -369,6 +371,311 @@
       color: var(--cinza);
       line-height: 1.6;
       font-size: 15px;
+    }
+    
+    /* ========== ELITE DAS ENTREGAS SECTION ========== */
+    .elite-section {
+      background: linear-gradient(135deg, var(--roxo-dark) 0%, #2a0340 50%, #1a0228 100%);
+      padding: 80px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .elite-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.05;
+      pointer-events: none;
+    }
+    
+    .elite-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .elite-titulo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 7vw, 56px);
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .elite-titulo .destaque-laranja {
+      color: var(--laranja);
+      text-shadow: 0 0 30px rgba(243, 118, 1, 0.4);
+    }
+    
+    .elite-texto {
+      font-size: clamp(16px, 3vw, 20px);
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* ========== ELITE IMAGE SECTION ========== */
+    .elite-image-section {
+      background: linear-gradient(180deg, #1a0228 0%, var(--roxo-dark) 50%, white 100%);
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    
+    .elite-image {
+      width: 100%;
+      max-width: 800px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    
+    /* ========== COMPARAÇÃO PASSADO VS FUTURO ========== */
+    .comparacao-section {
+      padding: 80px 5%;
+      background: var(--cinza-light);
+    }
+    
+    .comparacao-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    
+    .comparacao-card {
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.4s ease;
+    }
+    
+    .comparacao-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .card-passado {
+      background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+      border: 1px solid #ffcccc;
+    }
+    
+    .card-futuro {
+      background: linear-gradient(135deg, #f0fff4 0%, #dcffe4 100%);
+      border: 1px solid #b8f5c8;
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    
+    .tag {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .tag-passado {
+      background: #e53935;
+      color: white;
+    }
+    
+    .tag-futuro {
+      background: #2e7d32;
+      color: white;
+    }
+    
+    .card-header h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin: 0;
+    }
+    
+    .card-passado .card-header h3 {
+      color: #c62828;
+    }
+    
+    .card-futuro .card-header h3 {
+      color: #2e7d32;
+    }
+    
+    .card-items {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .item-comparacao {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    
+    .item-icon {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    
+    .item-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    
+    .icon-negativo {
+      color: #e53935;
+    }
+    
+    .icon-positivo {
+      background: #4caf50;
+      color: white;
+    }
+    
+    .icon-positivo svg {
+      width: 14px;
+      height: 14px;
+    }
+    
+    .item-content h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+      color: #333;
+    }
+    
+    .item-content p {
+      font-size: 14px;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
+    
+    /* ========== CTA FATURAR SECTION ========== */
+    .cta-faturar {
+      background: linear-gradient(135deg, #f37601 0%, #ff8c1a 50%, #e86a00 100%);
+      padding: 80px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-faturar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    
+    .cta-faturar-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cta-faturar-titulo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(28px, 6vw, 48px);
+      color: white;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    
+    .cta-faturar-texto {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: rgba(255, 255, 255, 0.95);
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 32px;
+    }
+    
+    .btn-faturar {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      padding: 18px 40px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.3);
+      transition: all 0.3s ease;
+      animation: pulseNeon 2s infinite;
+    }
+    
+    .btn-faturar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6), 0 0 60px rgba(37, 211, 102, 0.4);
+      background: #1ebe5d;
+    }
+    
+    @keyframes pulseNeon {
+      0%, 100% {
+        box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.3);
+      }
+      50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7), 0 0 60px rgba(37, 211, 102, 0.5);
+      }
+    }
+    
+    .btn-faturar svg {
+      width: 20px;
+      height: 20px;
+    }
+    
+    .cta-faturar-urgencia {
+      font-size: clamp(14px, 2vw, 16px);
+      color: rgba(255, 255, 255, 0.9);
+      margin-top: 24px;
+      font-style: italic;
+    }
+    
+    /* ========== REGIÕES IMAGE ========== */
+    .regioes-image-container {
+      max-width: 800px;
+      margin: 40px auto 0;
+      text-align: center;
+    }
+    
+    .regioes-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.15);
     }
     
     /* ========== COMO FUNCIONA ========== */
@@ -802,7 +1109,9 @@
     }
     
     .footer-logo {
-      height: 40px;
+      height: 70px;
+      max-width: 180px;
+      object-fit: contain;
       margin-bottom: 20px;
       opacity: 0.9;
     }
@@ -965,7 +1274,7 @@
     <div class="hero-decoration hero-decoration-2"></div>
     
     <header class="header">
-      <img src="data:image/webp;base64,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" alt="Tutts" class="logo">
+      <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true" alt="Tutts" class="logo">
       <a href="https://wa.me/5571920037226" class="header-cta">Fale Conosco</a>
     </header>
     
@@ -1062,6 +1371,124 @@
     </div>
   </section>
   
+  <!-- SEÇÃO IMPACTO - ELITE DAS ENTREGAS -->
+  <section class="elite-section">
+    <div class="elite-content">
+      <h2 class="elite-titulo animate-on-scroll">
+        PARE DE SE ARRISCAR POR TROCADOS.<br>
+        SAIA DA "BAG" DE LANCHE E<br>
+        ENTRE PARA A <span class="destaque-laranja">ELITE DAS ENTREGAS</span>
+      </h2>
+      <p class="elite-texto animate-on-scroll">
+        Você ainda está rodando à noite, no frio e na chuva, para entregar hambúrguer na porta de desconhecidos? Chegou a hora de parar de passar perrengue e faturar muito mais!
+      </p>
+    </div>
+  </section>
+  
+  <!-- IMAGEM ELITE -->
+  <section class="elite-image-section">
+    <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Gemini_Generated_Image_h1qj69h1qj69h1qj.png?raw=true" alt="Entregador Profissional Tutts" class="elite-image animate-on-scroll">
+  </section>
+  
+  <!-- COMPARAÇÃO PASSADO VS FUTURO -->
+  <section class="comparacao-section">
+    <div class="comparacao-container">
+      <!-- Card Passado -->
+      <div class="comparacao-card card-passado animate-on-scroll">
+        <div class="card-header">
+          <span class="tag tag-passado">O PASSADO</span>
+          <h3>Entrega de Comida</h3>
+        </div>
+        <div class="card-items">
+          <div class="item-comparacao">
+            <div class="item-icon icon-negativo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="item-content">
+              <h4>Risco Elevado (B2C)</h4>
+              <p>Entrega para qualquer pessoa física. Você nunca sabe quem é o cliente.</p>
+            </div>
+          </div>
+          <div class="item-comparacao">
+            <div class="item-icon icon-negativo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="item-content">
+              <h4>Rotina Exaustiva</h4>
+              <p>Precisa rodar à noite, feriados e domingos para bater a meta.</p>
+            </div>
+          </div>
+          <div class="item-comparacao">
+            <div class="item-icon icon-negativo">
+              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            </div>
+            <div class="item-content">
+              <h4>Suporte Robô</h4>
+              <p>Respostas automáticas que não resolvem nada. Você é invisível.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card Futuro -->
+      <div class="comparacao-card card-futuro animate-on-scroll">
+        <div class="card-header">
+          <span class="tag tag-futuro">SEU FUTURO</span>
+          <h3>Entrega de Autopeças</h3>
+        </div>
+        <div class="card-items">
+          <div class="item-comparacao">
+            <div class="item-icon icon-positivo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div class="item-content">
+              <h4>Segurança Total (B2B)</h4>
+              <p>Entregas apenas para Empresas Cadastradas (CNPJs). Ambientes controlados. Geralmente entregas para os mesmos clientes!</p>
+            </div>
+          </div>
+          <div class="item-comparacao">
+            <div class="item-icon icon-positivo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div class="item-content">
+              <h4>Horário Comercial</h4>
+              <p>Fature alto de segunda a sexta, durante o dia e tenha Noites e fins de semana livres para dedicar a sua família!</p>
+            </div>
+          </div>
+          <div class="item-comparacao">
+            <div class="item-icon icon-positivo">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <div class="item-content">
+              <h4>Suporte Humanizado</h4>
+              <p>Atendimento "Pessoa para Pessoa". Time real focado no seu dia a dia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- CTA FATURAR DE VERDADE -->
+  <section class="cta-faturar">
+    <div class="cta-faturar-content">
+      <h2 class="cta-faturar-titulo animate-on-scroll">
+        VAI CONTINUAR CARREGANDO MOCHILA DE LANCHE<br>
+        OU VAI COMEÇAR A FATURAR DE VERDADE?
+      </h2>
+      <p class="cta-faturar-texto animate-on-scroll">
+        Não perca tempo competindo com milhares de motos por uma taxa mínima. O mercado de autopeças precisa de profissionais qualificados AGORA.
+      </p>
+      <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn-faturar animate-on-scroll" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M8 5v14l11-7z"/></svg>
+        QUERO ME CADASTRAR E FATURAR MAIS
+      </a>
+      <p class="cta-faturar-urgencia animate-on-scroll">
+        Cadastro rápido. Comece a rodar em breve. Aproveite a disponibilidade da sua região!
+      </p>
+    </div>
+  </section>
+  
   <!-- COMO FUNCIONA -->
   <section class="como-funciona" id="como-funciona">
     <h2 class="section-title animate-on-scroll">Como Funciona?</h2>
@@ -1101,7 +1528,7 @@
     
     <div class="video-container animate-on-scroll">
       <iframe 
-        src="https://www.instagram.com/reel/DQpok6sCOB5/embed" 
+        src="https://www.instagram.com/reel/DNss5im2uUB/embed" 
         allowfullscreen
         loading="lazy">
       </iframe>
@@ -1198,11 +1625,15 @@
         Goiânia
       </div>
     </div>
+    
+    <div class="regioes-image-container animate-on-scroll">
+      <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Untitled-1%20(1).png?raw=true" alt="Mapa de atuação Tutts" class="regioes-image">
+    </div>
   </section>
   
   <!-- CTA FINAL -->
   <section class="cta-final">
-    <h2 class="section-title animate-on-scroll">Pronto para Começar?</h2>
+    <h2 class="section-title animate-on-scroll">Pronto para mudar de vida?</h2>
     <p class="animate-on-scroll">Junte-se a centenas de entregadores que já estão ganhando dinheiro com a Tutts!</p>
     
     <div class="cta-buttons">
@@ -1220,7 +1651,7 @@
   
   <!-- FOOTER -->
   <footer class="footer">
-    <img src="data:image/webp;base64,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" alt="Tutts" class="footer-logo">
+    <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true" alt="Tutts" class="footer-logo">
     <p>© 2024 Tutts - Todos os direitos reservados</p>
     <p style="margin-top: 10px;">
       <a href="https://wa.me/5571920037226">WhatsApp: (71) 92003-7226</a>
