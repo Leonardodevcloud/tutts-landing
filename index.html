@@ -747,11 +747,14 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.4);
     }
     
-    .video-container iframe {
+    .video-container iframe,
+    .video-container video {
       width: 100%;
       aspect-ratio: 9/16;
       border: none;
       display: block;
+      object-fit: cover;
+      background: #000;
     }
     
     /* ========== COMO FUNCIONA TUTTS ========== */
@@ -1304,17 +1307,27 @@
     </div>
   </section>
   
-  <!-- VÍDEO INSTAGRAM -->
+  <!-- VÍDEO INSTITUCIONAL -->
   <section class="video-section" id="video">
     <h2 class="section-title animate-on-scroll">Veja na Prática</h2>
     <p class="section-subtitle animate-on-scroll">Conheça mais sobre a Tutts e como é rodar com a gente</p>
     
     <div class="video-container animate-on-scroll">
-      <iframe 
-        src="https://www.instagram.com/reel/DQ45hO5j5R8/embed" 
-        allowfullscreen
-        loading="lazy">
-      </iframe>
+      <!-- 
+        INSTRUÇÕES PARA USAR VÍDEO DO GITHUB:
+        1. Faça upload do vídeo MP4 no seu repositório GitHub
+        2. Copie a URL raw do arquivo (clique no arquivo > botão "Raw" ou "Download")
+        3. A URL será algo como: https://raw.githubusercontent.com/Leonardodevcloud/tutts-landing/main/video-tutts.mp4
+        4. Substitua o src abaixo pela sua URL
+      -->
+      <video 
+        src="./videos/video-tutts.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        poster="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true">
+        Seu navegador não suporta vídeos HTML5.
+      </video>
     </div>
   </section>
   
