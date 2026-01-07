@@ -1324,10 +1324,12 @@
         src="./img-5579_ZB08raWD.mp4"
         controls
         playsinline
-        preload="metadata"
+        preload="auto"
         muted
+        autoplay
         loop
         id="video-tutts"
+        webkit-playsinline="true"
         poster="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true">
         Seu navegador não suporta vídeos HTML5.
       </video>
@@ -1625,17 +1627,35 @@
     // Autoplay video when section is visible
     const videoElement = document.getElementById('video-tutts');
     if (videoElement) {
+      // Força o muted para garantir autoplay
+      videoElement.muted = true;
+      
+      const playVideo = () => {
+        const playPromise = videoElement.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(error => {
+            console.log('Autoplay bloqueado:', error);
+          });
+        }
+      };
+      
       const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            videoElement.play();
+            playVideo();
           } else {
             videoElement.pause();
           }
         });
-      }, { threshold: 0.5 });
+      }, { threshold: 0.3 });
       
       videoObserver.observe(videoElement);
+      
+      // Tenta dar play também no primeiro toque na tela
+      document.addEventListener('touchstart', function onFirstTouch() {
+        playVideo();
+        document.removeEventListener('touchstart', onFirstTouch);
+      }, { once: true });
     }
   </script>
 </body>
