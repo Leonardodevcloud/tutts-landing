@@ -1325,6 +1325,9 @@
         controls
         playsinline
         preload="metadata"
+        muted
+        loop
+        id="video-tutts"
         poster="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true">
         Seu navegador não suporta vídeos HTML5.
       </video>
@@ -1618,6 +1621,22 @@
         }
       });
     });
+    
+    // Autoplay video when section is visible
+    const videoElement = document.getElementById('video-tutts');
+    if (videoElement) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            videoElement.play();
+          } else {
+            videoElement.pause();
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      videoObserver.observe(videoElement);
+    }
   </script>
 </body>
 </html>
