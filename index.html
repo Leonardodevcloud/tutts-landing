@@ -24,6 +24,16 @@
   /></noscript>
   <!-- End Meta Pixel Code -->
   
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "v8gstrebw5");
+  </script>
+  <!-- End Microsoft Clarity -->
+  
   <!-- Configuração de Regiões Dinâmicas -->
   <script>
     // ========================================
@@ -1782,11 +1792,16 @@
       observer.observe(el);
     });
     
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links (ignora links externos)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        // Ignora se não for âncora válida ou se foi atualizado para URL externa
+        if (!href || href === '#' || href.startsWith('http') || href.startsWith('https')) {
+          return;
+        }
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({ behavior: 'smooth' });
         }
@@ -1882,15 +1897,18 @@
       
       trackedLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
-          e.preventDefault();
-          
           const eventName = this.getAttribute('data-fbq-event');
-          const location = this.getAttribute('data-fbq-location') || this.getAttribute('data-fbq-content') || 'Geral';
+          const location = this.getAttribute('data-fbq-location') || this.getAttribute('data-fbq-content') || 'Botão';
           const url = this.href;
           const isNewTab = this.getAttribute('target') === '_blank';
           
-          // Content name inclui região + localização do botão
-          const contentName = `${location} - ${nomeRegiao}`;
+          // Só previne default se tiver uma URL válida
+          if (url && url !== '#' && !url.endsWith('#')) {
+            e.preventDefault();
+          }
+          
+          // Content name inclui localização + região
+          const contentName = location + ' - ' + nomeRegiao;
           
           // Dispara o evento do Facebook Pixel
           if (typeof fbq !== 'undefined') {
@@ -1903,13 +1921,15 @@
           }
           
           // Aguarda 300ms para garantir que o evento foi enviado
-          setTimeout(function() {
-            if (isNewTab) {
-              window.open(url, '_blank');
-            } else {
-              window.location.href = url;
-            }
-          }, 300);
+          if (url && url !== '#' && !url.endsWith('#')) {
+            setTimeout(function() {
+              if (isNewTab) {
+                window.open(url, '_blank');
+              } else {
+                window.location.href = url;
+              }
+            }, 300);
+          }
         });
       });
       
