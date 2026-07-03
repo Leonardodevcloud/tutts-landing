@@ -819,10 +819,11 @@
       transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
     }
     .sticky-cta.visivel { transform: translateY(0); }
-    .sticky-cta-info { min-width: 0; }
+    .sticky-cta-info { flex: 1; min-width: 0; overflow: hidden; }
     .sticky-cta-info .valor {
       font-family: 'Bebas Neue', sans-serif; font-size: 22px;
       color: var(--laranja-light); line-height: 1;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
     }
     .sticky-cta-info .desc { color: rgba(255,255,255,0.7); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .sticky-cta .btn { padding: 13px 24px; font-size: 14.5px; flex-shrink: 0; }
@@ -860,7 +861,8 @@
       .logo { height: 60px; }
       .header-cta { padding: 10px 18px; font-size: 12.5px; }
       .hero-content { padding-bottom: 70px; }
-      .btn { width: 100%; justify-content: center; }
+      .hero-buttons .btn, .cta-buttons .btn, .sim-cta .btn { width: 100%; justify-content: center; }
+      .sticky-cta .btn { width: auto; flex-shrink: 0; }
       .hero-buttons, .cta-buttons { width: 100%; max-width: 380px; margin-left: auto; margin-right: auto; }
       .sim-resultados { grid-template-columns: 1fr 1fr; }
       .card-futuro { transform: none; }
