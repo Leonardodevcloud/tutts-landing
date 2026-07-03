@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tutts - Seja um Entregador de Autopeças</title>
-  <meta name="description" content="Ganhe acima de R$ 1.000 por semana fazendo entregas de autopeças. Trabalhe de segunda a sexta, das 8h às 18h. Baixe o app e comece hoje!">
-  
+  <title>Tutts — Ganhe R$ 1.000+/semana entregando autopeças de moto</title>
+  <meta name="description" content="Fature acima de R$ 1.000 por semana entregando autopeças. Segunda a sexta, 8h às 18h, finais de semana livres. Entregas seguradas para empresas. Baixe o app!">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tutts — Ganhe R$ 1.000+/semana entregando autopeças">
+  <meta property="og:description" content="Horário comercial, fins de semana livres, entregas seguradas para CNPJ e saque imediato via Pix. Vagas abertas em todo o Brasil.">
+  <meta property="og:image" content="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true">
+  <meta name="theme-color" content="#550776">
+
   <!-- Meta Pixel Code -->
   <script>
   !function(f,b,e,v,n,t,s)
@@ -23,7 +30,7 @@
   src="https://www.facebook.com/tr?id=904731551901214&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
-  
+
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -33,7 +40,7 @@
     })(window, document, "clarity", "script", "v8gstrebw5");
   </script>
   <!-- End Microsoft Clarity -->
-  
+
   <!-- Configuração de Regiões Dinâmicas -->
   <script>
     // ========================================
@@ -52,7 +59,6 @@
       'aracaju': { nome: 'ARACAJU', estado: 'SE' },
       'teresina': { nome: 'TERESINA', estado: 'PI' },
       'saoluis': { nome: 'SÃO LUÍS', estado: 'MA' },
-      
       // Sudeste
       'saopaulo': { nome: 'SÃO PAULO', estado: 'SP' },
       'campinas': { nome: 'CAMPINAS', estado: 'SP' },
@@ -61,1474 +67,955 @@
       'riodejaneiro': { nome: 'RIO DE JANEIRO', estado: 'RJ' },
       'belohorizonte': { nome: 'BELO HORIZONTE', estado: 'MG' },
       'vitoria': { nome: 'VITÓRIA', estado: 'ES' },
-      
       // Centro-Oeste
       'brasilia': { nome: 'BRASÍLIA', estado: 'DF' },
       'goiania': { nome: 'GOIÂNIA', estado: 'GO' },
       'cuiaba': { nome: 'CUIABÁ', estado: 'MT' },
       'campogrande': { nome: 'CAMPO GRANDE', estado: 'MS' },
-      
       // Sul
       'curitiba': { nome: 'CURITIBA', estado: 'PR' },
       'florianopolis': { nome: 'FLORIANÓPOLIS', estado: 'SC' },
       'portoalegre': { nome: 'PORTO ALEGRE', estado: 'RS' },
-      
       // Norte
       'manaus': { nome: 'MANAUS', estado: 'AM' },
       'belem': { nome: 'BELÉM', estado: 'PA' }
     };
-    
-    // Número de WhatsApp padrão (usado em todas as regiões)
+
     const WHATSAPP_NUMERO = '5511933603400';
-    
-    // Mensagem padrão (sem região - fallback)
     const MENSAGEM_PADRAO = 'Olá! Tudo bem? Gostaria de mais informações sobre o aplicativo.';
-    
-    // Função para obter região da URL
+    const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share';
+
     function getRegiaoFromURL() {
       const params = new URLSearchParams(window.location.search);
       const regiao = params.get('regiao');
       return regiao ? regiao.toLowerCase() : null;
     }
-    
-    // Função para gerar mensagem do WhatsApp
+
     function gerarMensagemWhatsApp(regiaoKey) {
       if (regiaoKey && REGIOES_CONFIG[regiaoKey]) {
         const regiao = REGIOES_CONFIG[regiaoKey];
-        // *texto* = negrito no WhatsApp
         return `Olá! Tudo bem? Estou em *${regiao.nome}* e gostaria de mais informações sobre o aplicativo.`;
       }
       return MENSAGEM_PADRAO;
     }
-    
-    // Função para gerar link do WhatsApp
+
     function gerarLinkWhatsApp(regiaoKey) {
       const mensagem = encodeURIComponent(gerarMensagemWhatsApp(regiaoKey));
       return `https://wa.me/${WHATSAPP_NUMERO}?text=${mensagem}`;
     }
-    
-    // Função para obter nome da região para tracking
+
     function getNomeRegiaoTracking(regiaoKey) {
       if (regiaoKey && REGIOES_CONFIG[regiaoKey]) {
         return REGIOES_CONFIG[regiaoKey].nome;
       }
       return 'Geral';
     }
-    
-    // Variável global com a região atual
+
     const REGIAO_ATUAL = getRegiaoFromURL();
   </script>
-  
+
+  <!-- Schema.org JobPosting (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Entregador de Autopeças (Motoboy Parceiro)",
+    "description": "Entregue autopeças para empresas (CNPJ) de segunda a sexta, das 8h às 18h. Entregas seguradas, taxa a partir de R$ 10, saque imediato via Pix. Exclusivo para motos com baú ou caixote.",
+    "hiringOrganization": { "@type": "Organization", "name": "Tutts" },
+    "employmentType": "CONTRACTOR",
+    "jobLocationType": "TELECOMMUTE",
+    "applicantLocationRequirements": { "@type": "Country", "name": "Brasil" },
+    "baseSalary": {
+      "@type": "MonetaryAmount",
+      "currency": "BRL",
+      "value": { "@type": "QuantitativeValue", "minValue": 1000, "unitText": "WEEK" }
+    }
+  }
+  </script>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo-tutts.png">
-  
+
   <style>
     :root {
       --roxo: #550776;
       --roxo-dark: #3d0556;
+      --roxo-deep: #23033a;
+      --roxo-black: #160223;
       --roxo-light: #7a1a9e;
       --laranja: #f37601;
       --laranja-light: #ff9633;
+      --laranja-glow: rgba(243, 118, 1, 0.45);
+      --verde-wpp: #25d366;
       --branco: #ffffff;
-      --cinza-light: #f5f5f5;
+      --creme: #faf6f0;
       --cinza: #666666;
+      --sombra-card: 0 10px 40px rgba(85, 7, 118, 0.10);
+      --radius: 18px;
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    html {
-      scroll-behavior: smooth;
-    }
-    
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: var(--branco);
-      color: #333;
+      color: #2a2a2a;
       overflow-x: hidden;
     }
-    
-    /* ========== HERO SECTION ========== */
+
+    img, video { max-width: 100%; }
+
+    .display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.5px; }
+
+    /* ===== Barra de progresso de leitura ===== */
+    .progress-bar {
+      position: fixed; top: 0; left: 0; height: 4px; width: 0%;
+      background: linear-gradient(90deg, var(--laranja), var(--laranja-light));
+      z-index: 1000; transition: width 0.1s linear;
+      box-shadow: 0 0 12px var(--laranja-glow);
+    }
+
+    /* ========== HERO ========== */
     .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-dark) 50%, #2a0340 100%);
+      min-height: 100svh;
+      background:
+        radial-gradient(ellipse 90% 60% at 85% -10%, rgba(243,118,1,0.22), transparent 60%),
+        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(122,26,158,0.35), transparent 60%),
+        linear-gradient(160deg, var(--roxo) 0%, var(--roxo-dark) 45%, var(--roxo-black) 100%);
       position: relative;
-      display: flex;
-      flex-direction: column;
+      display: flex; flex-direction: column;
       overflow: hidden;
     }
-    
+
     .hero::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      position: absolute; inset: 0;
       background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      opacity: 0.03;
-      pointer-events: none;
+      opacity: 0.035; pointer-events: none;
     }
-    
-    /* Decorative elements */
-    .hero-decoration {
-      position: absolute;
-      border-radius: 50%;
-      background: var(--laranja);
-      opacity: 0.1;
-      filter: blur(80px);
+
+    /* Linhas de velocidade — remete à moto em movimento */
+    .speed-lines {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden;
     }
-    
-    .hero-decoration-1 {
-      width: 400px;
-      height: 400px;
-      top: -100px;
-      right: -100px;
+    .speed-line {
+      position: absolute; height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,150,51,0.5), transparent);
+      animation: speedDash 3.2s linear infinite;
+      opacity: 0;
     }
-    
-    .hero-decoration-2 {
-      width: 300px;
-      height: 300px;
-      bottom: 10%;
-      left: -50px;
-      background: var(--roxo-light);
+    .speed-line:nth-child(1) { top: 22%; width: 180px; animation-delay: 0s; }
+    .speed-line:nth-child(2) { top: 38%; width: 120px; animation-delay: 1.1s; }
+    .speed-line:nth-child(3) { top: 64%; width: 220px; animation-delay: 0.5s; }
+    .speed-line:nth-child(4) { top: 80%; width: 140px; animation-delay: 1.8s; }
+    @keyframes speedDash {
+      0% { left: -260px; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { left: 110%; opacity: 0; }
     }
-    
-    /* Header */
+
     .header {
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 10;
+      padding: 18px 5%;
+      display: flex; justify-content: space-between; align-items: center;
+      position: relative; z-index: 10;
     }
-    
     .logo {
-      height: 84px;
-      max-width: 216px;
-      object-fit: contain;
+      height: 76px; max-width: 200px; object-fit: contain;
       filter: drop-shadow(0 2px 10px rgba(0,0,0,0.3));
       animation: fadeInDown 0.8s ease-out;
     }
-    
     .header-cta {
-      background: var(--laranja);
-      color: white;
-      padding: 12px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(243, 118, 1, 0.4);
+      background: var(--laranja); color: white;
+      padding: 12px 26px; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 14px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 20px var(--laranja-glow);
       animation: fadeInDown 0.8s ease-out 0.2s both;
+      white-space: nowrap;
     }
-    
-    .header-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 30px rgba(243, 118, 1, 0.5);
-      background: var(--laranja-light);
-    }
-    
-    /* Hero Content */
+    .header-cta:hover { transform: translateY(-2px); background: var(--laranja-light); }
+
     .hero-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 40px 5%;
-      position: relative;
-      z-index: 5;
+      flex: 1; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 24px 5% 90px; position: relative; z-index: 5;
     }
-    
+
+    /* Badge de escassez com pulso */
     .hero-badge {
-      background: rgba(255,255,255,0.15);
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.12);
       backdrop-filter: blur(10px);
-      padding: 8px 20px;
-      border-radius: 50px;
-      color: white;
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 24px;
-      border: 1px solid rgba(255,255,255,0.2);
-      animation: fadeInUp 0.8s ease-out 0.3s both;
+      padding: 9px 20px; border-radius: 50px;
+      color: white; font-size: 14px; font-weight: 600;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255,255,255,0.22);
+      animation: fadeInUp 0.8s ease-out 0.25s both;
     }
-    
-    .hero-badge span {
-      color: var(--laranja);
-      font-weight: 700;
+    .pulse-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--laranja); position: relative; flex-shrink: 0;
     }
-    
+    .pulse-dot::after {
+      content: ''; position: absolute; inset: -5px; border-radius: 50%;
+      background: var(--laranja); opacity: 0.5;
+      animation: pulseRing 1.6s ease-out infinite;
+    }
+    @keyframes pulseRing {
+      0% { transform: scale(0.6); opacity: 0.6; }
+      100% { transform: scale(1.9); opacity: 0; }
+    }
+    .hero-badge strong { color: var(--laranja-light); }
+
     .hero-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(48px, 12vw, 100px);
-      color: white;
-      line-height: 0.95;
-      margin-bottom: 16px;
+      font-size: clamp(52px, 12vw, 108px);
+      color: white; line-height: 0.94; margin-bottom: 14px;
       animation: fadeInUp 0.8s ease-out 0.4s both;
-      text-shadow: 0 4px 30px rgba(0,0,0,0.3);
+      text-shadow: 0 4px 30px rgba(0,0,0,0.35);
     }
-    
     .hero-title .highlight {
       color: var(--laranja);
-      position: relative;
-      display: inline-block;
+      position: relative; display: inline-block;
+      text-shadow: 0 0 40px var(--laranja-glow);
     }
-    
     .hero-title .highlight::after {
-      content: '';
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      right: 0;
-      height: 8px;
-      background: var(--laranja);
-      opacity: 0.3;
-      border-radius: 4px;
+      content: ''; position: absolute; bottom: 4px; left: 0; right: 0;
+      height: 8px; background: var(--laranja); opacity: 0.3; border-radius: 4px;
     }
-    
+
     .hero-subtitle {
-      font-size: clamp(16px, 4vw, 22px);
-      color: rgba(255,255,255,0.9);
-      max-width: 600px;
-      margin-bottom: 25px;
-      line-height: 1.6;
+      font-size: clamp(16px, 4vw, 21px);
+      color: rgba(255,255,255,0.92);
+      max-width: 640px; margin-bottom: 22px; line-height: 1.6;
       animation: fadeInUp 0.8s ease-out 0.5s both;
     }
-    
+    .hero-subtitle strong { color: var(--laranja-light); }
+
     .hero-destaque-moto {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.1);
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,255,255,0.10);
       border: 2px solid var(--laranja);
-      padding: 12px 24px;
-      border-radius: 10px;
-      margin-bottom: 30px;
+      padding: 11px 22px; border-radius: 12px; margin-bottom: 28px;
       animation: fadeInUp 0.8s ease-out 0.55s both;
     }
-    
-    .destaque-icon {
-      font-size: 24px;
-    }
-    
-    .destaque-texto {
-      color: white;
-      font-size: clamp(14px, 3vw, 17px);
-      font-weight: 500;
-    }
-    
-    .destaque-texto strong {
-      font-weight: 700;
-      color: var(--laranja);
-    }
-    
+    .destaque-icon { font-size: 22px; }
+    .destaque-texto { color: white; font-size: clamp(14px, 3vw, 16px); font-weight: 500; }
+    .destaque-texto strong { color: var(--laranja); font-weight: 700; }
+
     .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;
       animation: fadeInUp 0.8s ease-out 0.6s both;
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      border: none;
-    }
-    
-    .btn-primary {
-      background: var(--laranja);
-      color: white;
-      box-shadow: 0 4px 25px rgba(243, 118, 1, 0.5);
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 35px rgba(243, 118, 1, 0.6);
-    }
-    
-    .btn-secondary {
-      background: rgba(255,255,255,0.1);
-      color: white;
-      border: 2px solid rgba(255,255,255,0.3);
-      backdrop-filter: blur(10px);
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.2);
-      border-color: rgba(255,255,255,0.5);
-      transform: translateY(-3px);
-    }
-    
-    .btn-whatsapp {
-      background: #25D366;
-      color: white;
-      box-shadow: 0 4px 25px rgba(37, 211, 102, 0.4);
-    }
-    
-    .btn-whatsapp:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 35px rgba(37, 211, 102, 0.5);
-    }
-    
-    .btn svg {
-      width: 22px;
-      height: 22px;
-    }
-    
-    /* Scroll indicator */
-    .scroll-indicator {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      opacity: 0.6;
-      animation: bounce 2s infinite;
-      z-index: 10;
-    }
-    
-    .scroll-indicator svg {
-      width: 32px;
-      height: 32px;
-    }
-    
-    /* ========== BENEFÍCIOS SECTION ========== */
-    .beneficios {
-      padding: 80px 5%;
-      background: var(--cinza-light);
-      position: relative;
-    }
-    
-    .beneficios::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 6px;
-      background: linear-gradient(90deg, var(--roxo), var(--laranja));
-    }
-    
-    .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(36px, 8vw, 56px);
-      text-align: center;
-      margin-bottom: 16px;
-      color: var(--roxo);
-    }
-    
-    .section-subtitle {
-      text-align: center;
-      color: var(--cinza);
-      font-size: 18px;
-      margin-bottom: 50px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .beneficios-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    
-    .beneficio-card {
-      background: white;
-      padding: 32px;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.08);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .beneficio-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--laranja), var(--roxo));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .beneficio-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(85, 7, 118, 0.15);
-    }
-    
-    .beneficio-card:hover::before {
-      opacity: 1;
-    }
-    
-    .beneficio-icon {
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, var(--roxo), var(--roxo-light));
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      color: white;
-      font-size: 28px;
-    }
-    
-    .beneficio-card h3 {
-      font-size: 20px;
-      font-weight: 700;
       margin-bottom: 10px;
-      color: #222;
     }
-    
-    .beneficio-card p {
-      color: var(--cinza);
-      line-height: 1.6;
-      font-size: 15px;
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 17px 34px; border-radius: 50px;
+      text-decoration: none; font-weight: 700; font-size: 16px;
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+      cursor: pointer; border: none;
+      position: relative; overflow: hidden;
     }
-    
-    /* ========== ELITE DAS ENTREGAS SECTION ========== */
-    .elite-section {
-      background: linear-gradient(135deg, var(--roxo-dark) 0%, #2a0340 50%, #1a0228 100%);
-      padding: 80px 5%;
+    .btn:active { transform: scale(0.97); }
+    .btn svg { width: 22px; height: 22px; flex-shrink: 0; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--laranja), #ff8a1e);
+      color: white;
+      box-shadow: 0 6px 28px var(--laranja-glow);
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 36px var(--laranja-glow); }
+
+    /* Brilho que atravessa o botão principal — chama o olho */
+    .btn-shine::before {
+      content: ''; position: absolute; top: 0; left: -80%;
+      width: 50%; height: 100%;
+      background: linear-gradient(105deg, transparent, rgba(255,255,255,0.35), transparent);
+      transform: skewX(-20deg);
+      animation: shine 3.4s ease-in-out infinite;
+    }
+    @keyframes shine {
+      0%, 60% { left: -80%; }
+      100% { left: 130%; }
+    }
+
+    .btn-whatsapp {
+      background: rgba(255,255,255,0.10);
+      color: white;
+      border: 2px solid var(--verde-wpp);
+      backdrop-filter: blur(8px);
+    }
+    .btn-whatsapp:hover { background: rgba(37,211,102,0.18); transform: translateY(-3px); }
+    .btn-whatsapp svg { color: var(--verde-wpp); }
+
+    .btn-microcopy {
+      color: rgba(255,255,255,0.65); font-size: 13px;
+      animation: fadeInUp 0.8s ease-out 0.7s both;
+    }
+
+    /* Prova social no hero */
+    .hero-social-proof {
+      display: flex; align-items: center; gap: 12px; margin-top: 26px;
+      animation: fadeInUp 0.8s ease-out 0.75s both;
+    }
+    .avatars { display: flex; }
+    .avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      border: 2px solid var(--roxo-dark);
+      background: linear-gradient(135deg, var(--laranja), var(--roxo-light));
+      display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 700; font-size: 14px;
+      margin-left: -10px;
+    }
+    .avatar:first-child { margin-left: 0; }
+    .hero-social-proof p { color: rgba(255,255,255,0.85); font-size: 13.5px; text-align: left; line-height: 1.4; }
+    .hero-social-proof strong { color: var(--laranja-light); }
+    .stars { color: #ffc93c; letter-spacing: 2px; font-size: 13px; }
+
+    .scroll-indicator {
+      position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%);
+      color: rgba(255,255,255,0.55); animation: bounce 2s infinite; z-index: 5;
+    }
+    .scroll-indicator svg { width: 28px; height: 28px; }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ===== Ticker de atividade (prova social viva) ===== */
+    .ticker-wrap {
+      background: var(--roxo-black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden; padding: 13px 0;
       position: relative;
-      overflow: hidden;
     }
-    
-    .elite-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      opacity: 0.05;
-      pointer-events: none;
+    .ticker {
+      display: flex; gap: 48px; width: max-content;
+      animation: tickerScroll 38s linear infinite;
     }
-    
-    .elite-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
+    .ticker-wrap:hover .ticker { animation-play-state: paused; }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: rgba(255,255,255,0.85); font-size: 13.5px; font-weight: 500;
+      white-space: nowrap;
     }
-    
-    .elite-titulo {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(32px, 7vw, 56px);
-      color: white;
-      line-height: 1.1;
-      margin-bottom: 30px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+    .ticker-item .dot-ok { width: 7px; height: 7px; border-radius: 50%; background: var(--verde-wpp); flex-shrink: 0; }
+    .ticker-item strong { color: var(--laranja-light); font-weight: 700; }
+    @keyframes tickerScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
-    
-    .elite-titulo .destaque-laranja {
-      color: var(--laranja);
-      text-shadow: 0 0 30px rgba(243, 118, 1, 0.4);
+
+    /* ===== Contadores / números ===== */
+    .stats-section {
+      background: var(--creme);
+      padding: 56px 5% 48px;
     }
-    
-    .elite-texto {
-      font-size: clamp(16px, 3vw, 20px);
-      color: rgba(255, 255, 255, 0.85);
-      line-height: 1.7;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    /* ========== ELITE IMAGE SECTION ========== */
-    .elite-image-section {
-      background: linear-gradient(180deg, #1a0228 0%, var(--roxo-dark) 50%, white 100%);
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    
-    .elite-image {
-      width: 100%;
-      max-width: 800px;
-      height: auto;
-      display: block;
-      object-fit: contain;
-    }
-    
-    /* ========== COMPARAÇÃO PASSADO VS FUTURO ========== */
-    .comparacao-section {
-      padding: 80px 5%;
-      background: var(--cinza-light);
-    }
-    
-    .comparacao-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-    }
-    
-    .comparacao-card {
-      border-radius: 20px;
-      padding: 32px;
-      transition: all 0.4s ease;
-    }
-    
-    .comparacao-card:hover {
-      transform: translateY(-5px);
-    }
-    
-    .card-passado {
-      background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-      border: 1px solid #ffcccc;
-    }
-    
-    .card-futuro {
-      background: linear-gradient(135deg, #f0fff4 0%, #dcffe4 100%);
-      border: 1px solid #b8f5c8;
-    }
-    
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-    
-    .tag {
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .tag-passado {
-      background: #e53935;
-      color: white;
-    }
-    
-    .tag-futuro {
-      background: #2e7d32;
-      color: white;
-    }
-    
-    .card-header h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0;
-    }
-    
-    .card-passado .card-header h3 {
-      color: #c62828;
-    }
-    
-    .card-futuro .card-header h3 {
-      color: #2e7d32;
-    }
-    
-    .card-items {
-      display: flex;
-      flex-direction: column;
+    .stats-grid {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 20px;
     }
-    
-    .item-comparacao {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
+    .stat-card {
+      background: white; border-radius: var(--radius);
+      padding: 28px 20px; text-align: center;
+      box-shadow: var(--sombra-card);
+      border-bottom: 4px solid var(--laranja);
     }
-    
-    .item-icon {
-      width: 24px;
-      height: 24px;
-      min-width: 24px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 2px;
-    }
-    
-    .item-icon svg {
-      width: 24px;
-      height: 24px;
-    }
-    
-    .icon-negativo {
-      color: #e53935;
-    }
-    
-    .icon-positivo {
-      background: #4caf50;
-      color: white;
-    }
-    
-    .icon-positivo svg {
-      width: 14px;
-      height: 14px;
-    }
-    
-    .item-content h4 {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0 0 4px 0;
-      color: #333;
-    }
-    
-    .item-content p {
-      font-size: 14px;
-      color: #666;
-      margin: 0;
-      line-height: 1.5;
-    }
-    
-    /* ========== CTA FATURAR SECTION ========== */
-    .cta-faturar {
-      background: linear-gradient(135deg, #f37601 0%, #ff8c1a 50%, #e86a00 100%);
-      padding: 80px 5%;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .cta-faturar::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      opacity: 0.08;
-      pointer-events: none;
-    }
-    
-    .cta-faturar-content {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .cta-faturar-titulo {
+    .stat-number {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(28px, 6vw, 48px);
-      color: white;
-      line-height: 1.15;
-      margin-bottom: 24px;
-      text-transform: uppercase;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      font-size: clamp(40px, 7vw, 56px);
+      color: var(--roxo); line-height: 1;
     }
-    
-    .cta-faturar-texto {
-      font-size: clamp(15px, 2.5vw, 18px);
-      color: rgba(255, 255, 255, 0.95);
-      line-height: 1.6;
-      max-width: 700px;
-      margin: 0 auto 32px;
-    }
-    
-    .btn-faturar {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      background: #25D366;
-      color: white;
-      padding: 18px 40px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.3);
-      transition: all 0.3s ease;
-      animation: pulseNeon 2s infinite;
-    }
-    
-    .btn-faturar:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6), 0 0 60px rgba(37, 211, 102, 0.4);
-      background: #1ebe5d;
-    }
-    
-    @keyframes pulseNeon {
-      0%, 100% {
-        box-shadow: 0 4px 25px rgba(37, 211, 102, 0.5), 0 0 40px rgba(37, 211, 102, 0.3);
-      }
-      50% {
-        box-shadow: 0 4px 30px rgba(37, 211, 102, 0.7), 0 0 60px rgba(37, 211, 102, 0.5);
-      }
-    }
-    
-    .btn-faturar svg {
-      width: 20px;
-      height: 20px;
-    }
-    
-    .cta-faturar-urgencia {
-      font-size: clamp(14px, 2vw, 16px);
-      color: rgba(255, 255, 255, 0.9);
-      margin-top: 24px;
-      font-style: italic;
-    }
-    
-    /* ========== REGIÕES IMAGE ========== */
-    .regioes-image-container {
-      max-width: 800px;
-      margin: 40px auto 0;
-      text-align: center;
-    }
-    
-    .regioes-image {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.15);
-    }
-    
-    /* ========== COMO FUNCIONA ========== */
-    .como-funciona {
-      padding: 80px 5%;
-      background: white;
-    }
-    
-    .steps-container {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    
-    .step {
-      display: flex;
-      gap: 30px;
-      margin-bottom: 50px;
-      align-items: flex-start;
-    }
-    
-    .step-number {
-      width: 70px;
-      height: 70px;
-      min-width: 70px;
-      background: linear-gradient(135deg, var(--laranja), var(--laranja-light));
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .stat-number .sufixo { color: var(--laranja); }
+    .stat-label { color: var(--cinza); font-size: 14px; font-weight: 500; margin-top: 6px; }
+
+    /* ===== Seções genéricas ===== */
+    .section-title {
       font-family: 'Bebas Neue', sans-serif;
-      font-size: 32px;
-      color: white;
-      box-shadow: 0 8px 30px rgba(243, 118, 1, 0.3);
+      font-size: clamp(36px, 7vw, 58px);
+      text-align: center; color: var(--roxo);
+      line-height: 1; margin-bottom: 10px;
     }
-    
-    .step-content h3 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--roxo);
-      margin-bottom: 10px;
+    .section-title .destaque { color: var(--laranja); }
+    .section-subtitle {
+      text-align: center; color: var(--cinza);
+      font-size: clamp(15px, 3.5vw, 18px);
+      max-width: 620px; margin: 0 auto 44px;
     }
-    
-    .step-content p {
-      color: var(--cinza);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-    
-    /* ========== VIDEO SECTION ========== */
-    .video-section {
-      padding: 80px 5%;
-      background: linear-gradient(135deg, var(--roxo-dark) 0%, var(--roxo) 100%);
-      text-align: center;
-    }
-    
-    .video-section .section-title {
-      color: white;
-    }
-    
-    .video-section .section-subtitle {
-      color: rgba(255,255,255,0.8);
-    }
-    
-    .video-container {
-      max-width: 560px;
-      margin: 0 auto;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    }
-    
-    .video-container iframe,
-    .video-container video {
-      width: 100%;
-      aspect-ratio: 9/16;
-      border: none;
-      display: block;
-      object-fit: cover;
-      background: #000;
-    }
-    
-    .video-container {
-      position: relative;
-    }
-    
-    .btn-ativar-som {
-      position: absolute;
-      bottom: 70px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--laranja);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 20px rgba(243, 118, 1, 0.4);
-      transition: all 0.3s ease;
-      z-index: 10;
-      animation: pulse-som 2s infinite;
-    }
-    
-    .btn-ativar-som:hover {
-      background: var(--laranja-light);
-      transform: translateX(-50%) scale(1.05);
-    }
-    
-    .btn-ativar-som svg {
-      width: 20px;
-      height: 20px;
-    }
-    
-    .btn-ativar-som.som-ativo {
-      background: var(--roxo);
-      animation: none;
-    }
-    
-    @keyframes pulse-som {
-      0%, 100% {
-        box-shadow: 0 4px 20px rgba(243, 118, 1, 0.4);
-      }
-      50% {
-        box-shadow: 0 4px 30px rgba(243, 118, 1, 0.8);
-      }
-    }
-    
-    /* ========== COMO FUNCIONA TUTTS ========== */
-    .como-funciona-tutts {
-      padding: 80px 5%;
-      background: var(--cinza-light);
-    }
-    
-    .tutts-intro {
-      max-width: 900px;
-      margin: 0 auto 50px;
-      text-align: center;
-    }
-    
-    .tutts-intro p {
-      font-size: 18px;
-      color: var(--cinza);
-      line-height: 1.7;
-    }
-    
-    .modalidades-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto 60px;
-    }
-    
-    .modalidade-card {
-      background: white;
-      border-radius: 20px;
-      padding: 40px 32px;
-      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.08);
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .modalidade-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--roxo), var(--laranja));
-    }
-    
-    .modalidade-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(85, 7, 118, 0.15);
-    }
-    
-    .modalidade-card .emoji {
-      font-size: 48px;
-      margin-bottom: 20px;
-      display: block;
-    }
-    
-    .modalidade-card h3 {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--roxo);
-      margin-bottom: 16px;
-    }
-    
-    .modalidade-card p {
-      color: var(--cinza);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-    
-    /* Seção Baú */
-    .bau-section {
-      background: white;
-      border-radius: 24px;
-      padding: 50px;
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      box-shadow: 0 10px 40px rgba(85, 7, 118, 0.08);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-    }
-    
-    .bau-content h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      color: var(--roxo);
-      margin-bottom: 20px;
-    }
-    
-    .bau-content > p {
-      color: var(--cinza);
-      line-height: 1.7;
-      font-size: 16px;
-      margin-bottom: 24px;
-    }
-    
-    .bau-beneficios {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .bau-beneficios li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 0;
-      color: #333;
-      font-size: 16px;
-      border-bottom: 1px solid #eee;
-    }
-    
-    .bau-beneficios li:last-child {
-      border-bottom: none;
-    }
-    
-    .bau-beneficios li::before {
-      content: '✓';
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      background: linear-gradient(135deg, var(--laranja), var(--laranja-light));
-      color: white;
-      border-radius: 50%;
-      font-weight: 700;
-      font-size: 14px;
-      flex-shrink: 0;
-    }
-    
-    .bau-image {
-      position: relative;
-    }
-    
-    .bau-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.15));
-    }
-    
-    /* Seção Incentivos */
-    .incentivos-section {
-      background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-dark) 100%);
-      border-radius: 24px;
-      padding: 50px;
-      max-width: 1100px;
-      margin: 0 auto;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .incentivos-section::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 400px;
-      height: 400px;
-      background: var(--laranja);
-      border-radius: 50%;
-      opacity: 0.1;
-      filter: blur(80px);
-    }
-    
-    .incentivos-section h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 36px;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .incentivos-section > p {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 30px;
-      max-width: 800px;
-      line-height: 1.7;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .incentivos-alerta {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 16px;
-      padding: 30px;
-      border: 1px solid rgba(255,255,255,0.2);
-      position: relative;
-      z-index: 1;
-    }
-    
-    .incentivos-alerta h4 {
-      font-size: 18px;
-      margin-bottom: 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .incentivos-alerta ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 20px;
-    }
-    
-    .incentivos-alerta li {
-      padding: 8px 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      opacity: 0.95;
-    }
-    
-    .incentivos-alerta li::before {
-      content: '→';
-      color: var(--laranja);
-      font-weight: 700;
-    }
-    
-    .incentivos-alerta .destaque {
-      background: var(--laranja);
-      padding: 16px 24px;
-      border-radius: 12px;
-      font-weight: 600;
-      text-align: center;
-      margin-top: 10px;
-    }
-    
-    @media (max-width: 768px) {
-      .bau-section {
-        grid-template-columns: 1fr;
-        padding: 30px 24px;
-        gap: 30px;
-      }
-      
-      .bau-image {
-        order: -1;
-      }
-      
-      .bau-content h3 {
-        font-size: 28px;
-      }
-      
-      .incentivos-section {
-        padding: 30px 24px;
-      }
-      
-      .incentivos-section h3 {
-        font-size: 28px;
-      }
-      
-      .modalidades-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .modalidade-card {
-        padding: 30px 24px;
-      }
-    }
-    
-    /* ========== REGIÕES ========== */
-    .regioes {
-      padding: 80px 5%;
-      background: var(--cinza-light);
-    }
-    
-    .regioes-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    
-    .regiao-tag {
-      background: white;
-      padding: 16px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      color: var(--roxo);
-      box-shadow: 0 4px 20px rgba(85, 7, 118, 0.1);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      transition: all 0.3s ease;
-    }
-    
-    .regiao-tag:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(85, 7, 118, 0.15);
-    }
-    
-    .regiao-tag svg {
-      color: var(--laranja);
-    }
-    
-    /* ========== CTA FINAL ========== */
-    .cta-final {
-      padding: 100px 5%;
-      background: linear-gradient(135deg, var(--roxo) 0%, var(--roxo-dark) 100%);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .cta-final::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 500px;
-      height: 500px;
-      background: var(--laranja);
-      border-radius: 50%;
-      opacity: 0.1;
-      filter: blur(100px);
-    }
-    
-    .cta-final .section-title {
-      color: white;
-      margin-bottom: 20px;
-    }
-    
-    .cta-final p {
-      color: rgba(255,255,255,0.9);
-      font-size: 20px;
-      margin-bottom: 40px;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    .cta-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      justify-content: center;
-      position: relative;
-      z-index: 5;
-    }
-    
-    /* ========== FOOTER ========== */
-    .footer {
-      background: #1a0525;
-      padding: 40px 5%;
-      text-align: center;
-    }
-    
-    .footer-logo {
-      height: 70px;
-      max-width: 180px;
-      object-fit: contain;
-      margin-bottom: 20px;
-      opacity: 0.9;
-    }
-    
-    .footer p {
-      color: rgba(255,255,255,0.5);
-      font-size: 14px;
-    }
-    
-    .footer a {
-      color: var(--laranja);
-      text-decoration: none;
-    }
-    
-    /* ========== ANIMATIONS ========== */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-      }
-      40% {
-        transform: translateX(-50%) translateY(-10px);
-      }
-      60% {
-        transform: translateX(-50%) translateY(-5px);
-      }
-    }
-    
-    /* Scroll animations */
+
+    /* Animações base */
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-22px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
     .animate-on-scroll {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
+      opacity: 0; transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
-    
-    .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+  </style>
+  <style>
+    /* ===== SIMULADOR DE GANHOS (assinatura da página) ===== */
+    .simulador-section {
+      background:
+        radial-gradient(ellipse 80% 60% at 100% 0%, rgba(243,118,1,0.15), transparent 55%),
+        linear-gradient(160deg, var(--roxo-dark) 0%, var(--roxo-deep) 60%, var(--roxo-black) 100%);
+      padding: 72px 5%;
+      position: relative; overflow: hidden;
     }
-    
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 768px) {
-      .hero {
-        min-height: auto;
-        padding-bottom: 40px;
-      }
-      
-      .header {
-        padding: 16px 5%;
-      }
-      
-      .logo {
-        height: 48px;
-        max-width: 130px;
-      }
-      
-      .header-cta {
-        padding: 10px 20px;
-        font-size: 13px;
-      }
-      
-      .hero-content {
-        padding: 20px 5%;
-      }
-      
-      .hero-badge {
-        font-size: 12px;
-        padding: 6px 16px;
-      }
-      
-      .hero-subtitle {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-      
-      .hero-buttons {
-        flex-direction: column;
-        width: 100%;
-        padding: 0 20px;
-      }
-      
-      .btn {
-        width: 100%;
-        justify-content: center;
-        padding: 16px 24px;
-        font-size: 15px;
-      }
-      
-      .beneficios, .como-funciona, .video-section, .regioes, .cta-final {
-        padding: 60px 5%;
-      }
-      
-      .step {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
-      }
-      
-      .step-number {
-        width: 60px;
-        height: 60px;
-        min-width: 60px;
-        font-size: 28px;
-      }
-      
-      .video-container {
-        border-radius: 16px;
-        margin: 0 -2%;
-      }
-      
-      .regiao-tag {
-        padding: 12px 20px;
-        font-size: 14px;
-      }
-      
-      .cta-final p {
-        font-size: 16px;
-      }
-      
-      .cta-buttons {
-        flex-direction: column;
-        padding: 0 20px;
-      }
+    .simulador-section .section-title { color: white; }
+    .simulador-section .section-subtitle { color: rgba(255,255,255,0.75); }
+
+    .simulador-card {
+      max-width: 640px; margin: 0 auto;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 24px;
+      padding: 36px 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
     }
-    
-    @media (max-width: 480px) {
-      .beneficios-grid {
-        grid-template-columns: 1fr;
+
+    .sim-label {
+      display: flex; justify-content: space-between; align-items: baseline;
+      color: rgba(255,255,255,0.85); font-size: 15px; font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .sim-label output {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 34px; color: var(--laranja-light); line-height: 1;
+    }
+
+    input[type="range"].sim-slider {
+      -webkit-appearance: none; appearance: none;
+      width: 100%; height: 10px; border-radius: 10px;
+      background: linear-gradient(90deg, var(--laranja) var(--fill, 50%), rgba(255,255,255,0.18) var(--fill, 50%));
+      outline: none; cursor: pointer;
+      margin-bottom: 30px;
+    }
+    input[type="range"].sim-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; appearance: none;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: white; border: 5px solid var(--laranja);
+      box-shadow: 0 0 0 6px rgba(243,118,1,0.25), 0 4px 14px rgba(0,0,0,0.4);
+      transition: transform 0.15s ease;
+    }
+    input[type="range"].sim-slider::-webkit-slider-thumb:active { transform: scale(1.15); }
+    input[type="range"].sim-slider::-moz-range-thumb {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: white; border: 5px solid var(--laranja);
+      box-shadow: 0 0 0 6px rgba(243,118,1,0.25);
+    }
+
+    .sim-resultados {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      margin-bottom: 26px;
+    }
+    .sim-resultado {
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 20px 14px; text-align: center;
+    }
+    .sim-resultado.principal {
+      border: 2px solid var(--laranja);
+      box-shadow: 0 0 30px rgba(243,118,1,0.25);
+      background: rgba(243,118,1,0.10);
+    }
+    .sim-resultado .valor {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 8vw, 46px);
+      color: white; line-height: 1;
+    }
+    .sim-resultado.principal .valor { color: var(--laranja-light); text-shadow: 0 0 24px var(--laranja-glow); }
+    .sim-resultado .periodo {
+      color: rgba(255,255,255,0.65); font-size: 13px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; margin-top: 6px;
+    }
+
+    .sim-disclaimer {
+      color: rgba(255,255,255,0.45); font-size: 11.5px;
+      text-align: center; margin-bottom: 22px; line-height: 1.5;
+    }
+    .sim-cta { display: flex; justify-content: center; }
+
+    /* ===== BENEFÍCIOS ===== */
+    .beneficios { padding: 76px 5%; background: white; }
+    .beneficios-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .beneficio-card {
+      background: var(--creme);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      border: 1px solid rgba(85,7,118,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+    }
+    .beneficio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 44px rgba(85,7,118,0.14);
+      border-color: rgba(243,118,1,0.4);
+    }
+    .beneficio-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--roxo), var(--roxo-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin-bottom: 18px;
+      box-shadow: 0 6px 18px rgba(85,7,118,0.28);
+    }
+    .beneficio-card h3 {
+      font-size: 19px; color: var(--roxo-dark); margin-bottom: 8px; font-weight: 700;
+    }
+    .beneficio-card p { color: var(--cinza); font-size: 14.5px; line-height: 1.6; }
+    .beneficio-tag {
+      position: absolute; top: 18px; right: 18px;
+      background: var(--laranja); color: white;
+      font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.8px; padding: 4px 10px; border-radius: 20px;
+    }
+
+    /* ===== COMPARAÇÃO ===== */
+    .comparacao-section {
+      padding: 76px 5%;
+      background: linear-gradient(180deg, var(--creme) 0%, white 100%);
+    }
+    .comparacao-container {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 26px;
+    }
+    .comparacao-card {
+      border-radius: 22px; padding: 34px 28px;
+      position: relative;
+    }
+    .card-passado {
+      background: #f3f0f5;
+      border: 1px solid #e2dbe8;
+      filter: grayscale(0.35);
+    }
+    .card-futuro {
+      background: linear-gradient(160deg, var(--roxo) 0%, var(--roxo-dark) 100%);
+      color: white;
+      box-shadow: 0 24px 60px rgba(85,7,118,0.35);
+      transform: scale(1.02);
+    }
+    .card-header { margin-bottom: 26px; }
+    .tag {
+      display: inline-block; font-size: 11.5px; font-weight: 800;
+      letter-spacing: 1.5px; padding: 6px 14px; border-radius: 20px;
+      margin-bottom: 12px; text-transform: uppercase;
+    }
+    .tag-passado { background: #d9d2e0; color: #6b6274; }
+    .tag-futuro { background: var(--laranja); color: white; box-shadow: 0 4px 16px var(--laranja-glow); }
+    .comparacao-card h3 { font-size: 24px; }
+    .card-passado h3 { color: #5a5462; }
+    .card-items { display: flex; flex-direction: column; gap: 20px; }
+    .item-comparacao { display: flex; gap: 14px; align-items: flex-start; }
+    .item-icon {
+      width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .item-icon svg { width: 15px; height: 15px; }
+    .icon-negativo { background: #efc6c6; color: #b23b3b; }
+    .icon-positivo { background: var(--laranja); color: white; }
+    .item-content h4 { font-size: 15.5px; margin-bottom: 4px; }
+    .card-passado .item-content h4 { color: #5a5462; }
+    .item-content p { font-size: 13.5px; line-height: 1.55; }
+    .card-passado .item-content p { color: #837b8c; }
+    .card-futuro .item-content p { color: rgba(255,255,255,0.82); }
+
+    /* ===== VÍDEO ===== */
+    .video-section { padding: 76px 5%; background: white; }
+    .video-container {
+      max-width: 860px; margin: 0 auto; position: relative;
+      border-radius: 22px; overflow: hidden;
+      box-shadow: 0 24px 70px rgba(85,7,118,0.28);
+      border: 3px solid var(--roxo);
+    }
+    .video-container video { display: block; width: 100%; }
+    .btn-ativar-som {
+      position: absolute; bottom: 18px; right: 18px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--laranja); color: white; border: none;
+      padding: 11px 20px; border-radius: 50px;
+      font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px;
+      cursor: pointer; box-shadow: 0 6px 22px var(--laranja-glow);
+      transition: transform 0.2s ease; z-index: 3;
+      animation: pulseBtn 2s ease-in-out infinite;
+    }
+    .btn-ativar-som:hover { transform: scale(1.05); }
+    .btn-ativar-som.som-ativo { background: var(--verde-wpp); animation: none; }
+    .btn-ativar-som svg { width: 20px; height: 20px; }
+    @keyframes pulseBtn {
+      0%, 100% { box-shadow: 0 6px 22px var(--laranja-glow); }
+      50% { box-shadow: 0 6px 34px rgba(243,118,1,0.75); }
+    }
+
+    /* ===== DEPOIMENTOS ===== */
+    .depoimentos { padding: 76px 5%; background: var(--creme); }
+    .depoimentos-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .depoimento-card {
+      background: white; border-radius: var(--radius);
+      padding: 28px 26px; box-shadow: var(--sombra-card);
+      display: flex; flex-direction: column; gap: 14px;
+      border-top: 4px solid var(--laranja);
+    }
+    .depoimento-card .stars { font-size: 16px; }
+    .depoimento-texto { color: #444; font-size: 14.5px; line-height: 1.65; font-style: italic; }
+    .depoimento-autor { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+    .depoimento-autor .avatar { margin-left: 0; width: 44px; height: 44px; border: none; font-size: 16px; }
+    .autor-info strong { display: block; color: var(--roxo-dark); font-size: 14.5px; }
+    .autor-info span { color: var(--cinza); font-size: 12.5px; }
+    .badge-verificado {
+      display: inline-flex; align-items: center; gap: 4px;
+      color: var(--verde-wpp); font-size: 11.5px; font-weight: 600;
+    }
+    .badge-verificado svg { width: 13px; height: 13px; }
+
+    /* ===== COMO FUNCIONA ===== */
+    .como-funciona { padding: 76px 5%; background: white; }
+    .steps-container {
+      max-width: 760px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 0;
+      position: relative;
+    }
+    .step {
+      display: flex; gap: 24px; align-items: flex-start;
+      padding-bottom: 40px; position: relative;
+    }
+    .step:not(:last-child)::before {
+      content: ''; position: absolute;
+      left: 27px; top: 58px; bottom: 0; width: 3px;
+      background: linear-gradient(180deg, var(--laranja), rgba(243,118,1,0.15));
+      border-radius: 3px;
+    }
+    .step-number {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--laranja), #ff8a1e);
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-family: 'Bebas Neue', sans-serif; font-size: 28px;
+      box-shadow: 0 8px 24px var(--laranja-glow);
+      position: relative; z-index: 2;
+    }
+    .step-content h3 { color: var(--roxo-dark); font-size: 20px; margin-bottom: 6px; }
+    .step-content p { color: var(--cinza); font-size: 15px; line-height: 1.65; }
+    .step-tempo {
+      display: inline-block; margin-top: 8px;
+      background: rgba(243,118,1,0.12); color: var(--laranja);
+      font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+    }
+
+    /* ===== REGIÕES ===== */
+    .regioes { padding: 76px 5%; background: var(--creme); }
+    .regioes-grid {
+      display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+      max-width: 860px; margin: 0 auto 40px;
+    }
+    .regiao-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: white; color: var(--roxo);
+      padding: 11px 20px; border-radius: 50px;
+      font-weight: 600; font-size: 14.5px;
+      box-shadow: 0 4px 16px rgba(85,7,118,0.10);
+      border: 1px solid rgba(85,7,118,0.10);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .regiao-tag:hover { transform: translateY(-3px); border-color: var(--laranja); }
+    .regiao-tag svg { color: var(--laranja); }
+    .regiao-tag.regiao-ativa {
+      background: linear-gradient(135deg, var(--laranja), #ff8a1e);
+      color: white; border-color: transparent;
+      box-shadow: 0 8px 26px var(--laranja-glow);
+    }
+    .regiao-tag.regiao-ativa svg { color: white; }
+    .regioes-image-container { max-width: 720px; margin: 0 auto; text-align: center; }
+    .regioes-image { border-radius: 22px; box-shadow: 0 20px 56px rgba(85,7,118,0.20); }
+
+    /* ===== FAQ ===== */
+    .faq-section { padding: 76px 5%; background: white; }
+    .faq-container { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      border: 1px solid rgba(85,7,118,0.12);
+      border-radius: 14px; overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      background: white;
+    }
+    .faq-item[open] {
+      border-color: var(--laranja);
+      box-shadow: 0 8px 28px rgba(243,118,1,0.14);
+    }
+    .faq-item summary {
+      list-style: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 18px 22px;
+      font-weight: 600; font-size: 15.5px; color: var(--roxo-dark);
+      user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(85,7,118,0.08); color: var(--roxo);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    }
+    .faq-chevron svg { width: 14px; height: 14px; }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); background: var(--laranja); color: white; }
+    .faq-resposta { padding: 0 22px 20px; color: var(--cinza); font-size: 14.5px; line-height: 1.7; }
+    .faq-resposta strong { color: var(--roxo-dark); }
+
+    /* ===== CTA FINAL ===== */
+    .cta-final {
+      padding: 84px 5% 96px;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 0%, rgba(243,118,1,0.20), transparent 60%),
+        linear-gradient(160deg, var(--roxo) 0%, var(--roxo-dark) 55%, var(--roxo-black) 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    .cta-final .section-title { color: white; }
+    .cta-final > p { color: rgba(255,255,255,0.82); font-size: clamp(15px, 3.5vw, 18px); max-width: 560px; margin: 0 auto 14px; }
+    .cta-urgencia {
+      display: inline-flex; align-items: center; gap: 9px;
+      background: rgba(243,118,1,0.16);
+      border: 1px solid rgba(243,118,1,0.5);
+      color: var(--laranja-light);
+      padding: 9px 20px; border-radius: 50px;
+      font-size: 13.5px; font-weight: 700; margin-bottom: 30px;
+    }
+    .cta-buttons { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--roxo-black); color: rgba(255,255,255,0.6);
+      text-align: center; padding: 44px 5% 120px;
+      font-size: 13.5px;
+    }
+    .footer-logo { height: 60px; object-fit: contain; margin-bottom: 16px; opacity: 0.9; }
+    .footer a { color: var(--laranja-light); text-decoration: none; font-weight: 600; }
+
+    /* ===== BARRA CTA STICKY (mobile-first) ===== */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(22,2,35,0.92);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      transform: translateY(110%);
+      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .sticky-cta.visivel { transform: translateY(0); }
+    .sticky-cta-info { min-width: 0; }
+    .sticky-cta-info .valor {
+      font-family: 'Bebas Neue', sans-serif; font-size: 22px;
+      color: var(--laranja-light); line-height: 1;
+    }
+    .sticky-cta-info .desc { color: rgba(255,255,255,0.7); font-size: 11.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sticky-cta .btn { padding: 13px 24px; font-size: 14.5px; flex-shrink: 0; }
+
+    /* ===== WHATSAPP FLUTUANTE ===== */
+    .wpp-float {
+      position: fixed; bottom: 92px; right: 18px; z-index: 899;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--verde-wpp);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 28px rgba(37,211,102,0.45);
+      transition: transform 0.25s ease;
+    }
+    .wpp-float:hover { transform: scale(1.08); }
+    .wpp-float svg { width: 30px; height: 30px; color: white; }
+    .wpp-float::after {
+      content: ''; position: absolute; inset: -6px; border-radius: 50%;
+      border: 2px solid var(--verde-wpp); opacity: 0;
+      animation: pulseRing 2.2s ease-out infinite;
+    }
+
+    /* ===== Acessibilidade / performance ===== */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
-      
-      .beneficio-card {
-        padding: 24px;
-      }
-      
-      .scroll-indicator {
-        bottom: 20px;
-      }
+      html { scroll-behavior: auto; }
+      .animate-on-scroll { opacity: 1; transform: none; }
+    }
+    :focus-visible { outline: 3px solid var(--laranja); outline-offset: 3px; border-radius: 6px; }
+
+    @media (max-width: 640px) {
+      .logo { height: 60px; }
+      .header-cta { padding: 10px 18px; font-size: 12.5px; }
+      .hero-content { padding-bottom: 70px; }
+      .btn { width: 100%; justify-content: center; }
+      .hero-buttons, .cta-buttons { width: 100%; max-width: 380px; margin-left: auto; margin-right: auto; }
+      .sim-resultados { grid-template-columns: 1fr 1fr; }
+      .card-futuro { transform: none; }
+      .wpp-float { bottom: 96px; width: 54px; height: 54px; }
+      .footer { padding-bottom: 130px; }
     }
   </style>
 </head>
 <body>
-  <!-- HERO SECTION -->
+
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-decoration hero-decoration-1"></div>
-    <div class="hero-decoration hero-decoration-2"></div>
-    
+    <div class="speed-lines" aria-hidden="true">
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+      <div class="speed-line"></div>
+    </div>
+
     <header class="header">
       <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true" alt="Tutts" class="logo">
+      <a href="#" class="header-cta whatsapp-dinamico" target="_blank" data-fbq-event="Lead" data-fbq-location="Header WhatsApp">Falar com Atendente</a>
     </header>
-    
+
     <div class="hero-content">
-      <div class="hero-badge">🏍️ Demandas Disponíveis em <span>Todo Brasil</span></div>
-      
+      <div class="hero-badge">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span id="badge-regiao">Vagas abertas em <strong>todo o Brasil</strong></span>
+      </div>
+
       <h1 class="hero-title">
-        GANHE ACIMA DE <span class="highlight">R$ 1.000,00</span><br>
-        POR SEMANA!
+        GANHE ACIMA DE <span class="highlight">R$ 1.000</span><br>
+        POR SEMANA<span class="highlight">!</span>
       </h1>
-      
+
       <p class="hero-subtitle">
-        Rodando de segunda a sexta de 08:00 às 18:00 você consegue faturar muito e ter o final de semana livre.
+        Entregando autopeças de segunda a sexta, das <strong>8h às 18h</strong>.
+        Noites, sábados e domingos são <strong>seus</strong> — para a família, não para o trampo.
       </p>
-      
+
       <div class="hero-destaque-moto">
-        <span class="destaque-icon">📦</span>
+        <span class="destaque-icon" aria-hidden="true">📦</span>
         <span class="destaque-texto">Exclusivo para motos com <strong>baú ou caixote</strong></span>
       </div>
-      
+
       <div class="hero-buttons">
-        <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn btn-primary" target="_blank" data-fbq-event="Lead" data-fbq-location="Download App Hero">
+        <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn btn-primary btn-shine" target="_blank" data-fbq-event="Lead" data-fbq-location="Download App Hero">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-          Baixar o App Agora!
+          Quero Começar a Ganhar
         </a>
-        
+
         <a href="#" class="btn btn-whatsapp whatsapp-dinamico" target="_blank" data-fbq-event="Lead" data-fbq-location="Hero">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Falar com Atendente!
+          Tirar Dúvidas Agora
         </a>
       </div>
+      <p class="btn-microcopy">Cadastro gratuito · Leva menos de 5 minutos</p>
+
+      <div class="hero-social-proof">
+        <div class="avatars" aria-hidden="true">
+          <div class="avatar">M</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#7a1a9e,#f37601)">J</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#f37601,#3d0556)">C</div>
+          <div class="avatar" style="background:linear-gradient(135deg,#3d0556,#ff9633)">R</div>
+        </div>
+        <p>
+          <span class="stars" aria-label="5 estrelas">★★★★★</span><br>
+          <strong>Centenas de motoboys</strong> já rodam com a Tutts
+        </p>
+      </div>
     </div>
-    
-    <div class="scroll-indicator">
+
+    <div class="scroll-indicator" aria-hidden="true">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
     </div>
   </section>
-  
-  <!-- VÍDEO INSTITUCIONAL -->
+
+  <!-- ============ TICKER DE ATIVIDADE ============ -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker" id="ticker">
+      <!-- itens duplicados via JS para loop infinito -->
+    </div>
+  </div>
+
+  <!-- ============ NÚMEROS ============ -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-number"><span class="count-up" data-alvo="1000" data-prefixo="R$ ">R$ 0</span><span class="sufixo">+</span></div>
+        <div class="stat-label">por semana em média</div>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-number"><span class="count-up" data-alvo="26">0</span><span class="sufixo">+</span></div>
+        <div class="stat-label">cidades pelo Brasil</div>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-number"><span class="count-up" data-alvo="100">0</span><span class="sufixo">%</span></div>
+        <div class="stat-label">das entregas seguradas</div>
+      </div>
+      <div class="stat-card animate-on-scroll">
+        <div class="stat-number"><span class="sufixo">⚡</span> PIX</div>
+        <div class="stat-label">saque imediato, na hora</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SIMULADOR DE GANHOS ============ -->
+  <section class="simulador-section" id="simulador">
+    <h2 class="section-title animate-on-scroll">Quanto <span style="color:var(--laranja)">você</span> pode ganhar?</h2>
+    <p class="section-subtitle animate-on-scroll">Arraste e veja seu potencial. Taxa a partir de R$ 10 por entrega.</p>
+
+    <div class="simulador-card animate-on-scroll">
+      <div class="sim-label">
+        <span>Entregas por dia</span>
+        <output id="sim-entregas-out" for="sim-entregas">14</output>
+      </div>
+      <input type="range" class="sim-slider" id="sim-entregas" min="4" max="20" step="1" value="14" aria-label="Quantidade de entregas por dia">
+
+      <div class="sim-resultados">
+        <div class="sim-resultado principal">
+          <div class="valor" id="sim-semana">R$ 1.050</div>
+          <div class="periodo">por semana</div>
+        </div>
+        <div class="sim-resultado">
+          <div class="valor" id="sim-mes">R$ 4.200</div>
+          <div class="periodo">por mês</div>
+        </div>
+      </div>
+
+      <p class="sim-disclaimer">
+        Simulação com taxa média de R$ 15 por entrega, 5 dias por semana.
+        Os ganhos variam conforme região, demanda e quantidade de entregas realizadas.
+      </p>
+
+      <div class="sim-cta">
+        <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn btn-primary btn-shine" target="_blank" data-fbq-event="Lead" data-fbq-location="Download App Simulador">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+          Garantir Minha Vaga
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VÍDEO ============ -->
   <section class="video-section" id="video">
-    <h2 class="section-title animate-on-scroll">Conheça a Tutts!</h2>
-    <p class="section-subtitle animate-on-scroll">Veja na prática</p>
-    
+    <h2 class="section-title animate-on-scroll">Conheça a <span class="destaque">Tutts</span></h2>
+    <p class="section-subtitle animate-on-scroll">Veja na prática como funciona o dia a dia de quem roda com a gente</p>
+
     <div class="video-container animate-on-scroll">
-      <!-- 
-        INSTRUÇÕES PARA USAR VÍDEO DO GITHUB:
-        1. Faça upload do vídeo MP4 no seu repositório GitHub
-        2. Copie a URL raw do arquivo (clique no arquivo > botão "Raw" ou "Download")
-        3. A URL será algo como: https://raw.githubusercontent.com/Leonardodevcloud/tutts-landing/main/video-tutts.mp4
-        4. Substitua o src abaixo pela sua URL
-      -->
-      <video 
+      <video
         controls
         playsinline
-        preload="auto"
+        preload="metadata"
         muted
         autoplay
         loop
@@ -1540,9 +1027,8 @@
         <source src="/Vídeo langpage .mp4" type="video/mp4">
         Seu navegador não suporta vídeos HTML5.
       </video>
-      
-      <!-- Botão de Ativar Som -->
-      <button id="btn-som" class="btn-ativar-som">
+
+      <button id="btn-som" class="btn-ativar-som" type="button">
         <svg viewBox="0 0 24 24" fill="currentColor" class="icon-muted">
           <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z"/>
         </svg>
@@ -1553,96 +1039,99 @@
       </button>
     </div>
   </section>
-  
-  <!-- BENEFÍCIOS -->
+
+  <!-- ============ BENEFÍCIOS ============ -->
   <section class="beneficios" id="beneficios">
-    <h2 class="section-title animate-on-scroll">Por que rodar com a Tutts?</h2>
-    <p class="section-subtitle animate-on-scroll">Benefícios exclusivos para nossos entregadores parceiros</p>
-    
+    <h2 class="section-title animate-on-scroll">Por que rodar com a <span class="destaque">Tutts</span>?</h2>
+    <p class="section-subtitle animate-on-scroll">Benefícios pensados para quem vive da estrada — não promessa de app gringo</p>
+
     <div class="beneficios-grid">
       <div class="beneficio-card animate-on-scroll">
-        <div class="beneficio-icon">🛡️</div>
+        <div class="beneficio-icon" aria-hidden="true">🛡️</div>
         <h3>Entregas Asseguradas</h3>
-        <p>Todas as entregas são seguradas. Você trabalha com tranquilidade e segurança.</p>
+        <p>Toda entrega tem seguro. Se algo acontecer com a peça, o prejuízo não é seu. Você roda tranquilo.</p>
       </div>
-      
+
       <div class="beneficio-card animate-on-scroll">
-        <div class="beneficio-icon">🕐</div>
+        <div class="beneficio-icon" aria-hidden="true">🕐</div>
         <h3>Horário Comercial</h3>
-        <p>Trabalhe das 8h às 18h, de segunda a sexta. Tenha seus finais de semana livres!</p>
+        <p>Das 8h às 18h, de segunda a sexta. Nada de rodar madrugada ou domingo para fechar a semana.</p>
       </div>
-      
+
       <div class="beneficio-card animate-on-scroll">
-        <div class="beneficio-icon">🏢</div>
-        <h3>Clientes CNPJ</h3>
-        <p>Entregas apenas para empresas. Mais segurança e profissionalismo no seu dia a dia.</p>
+        <div class="beneficio-icon" aria-hidden="true">🏢</div>
+        <h3>Só Empresas (CNPJ)</h3>
+        <p>Você entrega em lojas e oficinas, ambientes conhecidos e controlados — muitas vezes para os mesmos clientes.</p>
       </div>
-      
+
       <div class="beneficio-card animate-on-scroll">
-        <div class="beneficio-icon">💵</div>
-        <h3>Taxa a partir de R$ 10,00</h3>
-        <p>Valores justos por entrega. Quanto mais você roda, mais você ganha!</p>
+        <div class="beneficio-icon" aria-hidden="true">💵</div>
+        <h3>Taxa a partir de R$ 10</h3>
+        <p>Valor justo por entrega, sem pegadinha. Quanto mais você roda, mais entra na conta.</p>
       </div>
-      
+
       <div class="beneficio-card animate-on-scroll">
-        <div class="beneficio-icon">❤️</div>
+        <div class="beneficio-icon" aria-hidden="true">❤️</div>
         <h3>Suporte Humanizado</h3>
-        <p>Time de suporte real, pronto para te ajudar. Nada de robôs ou respostas automáticas.</p>
+        <p>Gente de verdade respondendo você. Nada de robô, protocolo infinito ou resposta pronta.</p>
       </div>
-      
+
       <div class="beneficio-card animate-on-scroll">
-        <div class="beneficio-icon">⚡</div>
-        <h3>Saque em até 1 Hora</h3>
-        <p>Precisa de dinheiro rápido? Solicite saque emergencial e receba em até 1 hora!</p>
+        <span class="beneficio-tag">Exclusivo</span>
+        <div class="beneficio-icon" aria-hidden="true">⚡</div>
+        <h3>Saque Imediato</h3>
+        <p>Apertou? Solicite o saque e o dinheiro cai na sua conta na hora, via Pix. Sem espera, sem prazo.</p>
       </div>
-      
     </div>
   </section>
-  
-  <!-- COMPARAÇÃO PASSADO VS FUTURO -->
+
+  <!-- ============ COMPARAÇÃO ============ -->
   <section class="comparacao-section">
+    <h2 class="section-title animate-on-scroll">Chega de rodar no <span class="destaque">vermelho</span></h2>
+    <p class="section-subtitle animate-on-scroll">Compare a rotina de quem entrega comida com a de quem entrega autopeças</p>
+
     <div class="comparacao-container">
       <!-- Card Passado -->
       <div class="comparacao-card card-passado animate-on-scroll">
         <div class="card-header">
-          <span class="tag tag-passado">O PASSADO</span>
+          <span class="tag tag-passado">O Passado</span>
           <h3>Entrega de Comida</h3>
         </div>
         <div class="card-items">
           <div class="item-comparacao">
             <div class="item-icon icon-negativo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </div>
             <div class="item-content">
               <h4>Risco Elevado (B2C)</h4>
-              <p>Entrega para qualquer pessoa física. Você nunca sabe quem é o cliente.</p>
+              <p>Entrega para qualquer pessoa física, em qualquer lugar. Você nunca sabe quem é o cliente.</p>
             </div>
           </div>
           <div class="item-comparacao">
             <div class="item-icon icon-negativo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </div>
             <div class="item-content">
               <h4>Rotina Exaustiva</h4>
-              <p>Precisa rodar à noite, feriados e domingos para bater a meta.</p>
+              <p>Noite, feriado e domingo na rua para bater meta. A família só vê você dormindo.</p>
             </div>
           </div>
           <div class="item-comparacao">
             <div class="item-icon icon-negativo">
-              <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
             </div>
             <div class="item-content">
               <h4>Suporte Robô</h4>
-              <p>Respostas automáticas que não resolvem nada. Você é invisível.</p>
+              <p>Resposta automática que não resolve nada. Bloqueio injusto e ninguém para te ouvir.</p>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Card Futuro -->
       <div class="comparacao-card card-futuro animate-on-scroll">
         <div class="card-header">
-          <span class="tag tag-futuro">SEU FUTURO</span>
+          <span class="tag tag-futuro">Seu Futuro</span>
           <h3>Entrega de Autopeças</h3>
         </div>
         <div class="card-items">
@@ -1652,7 +1141,7 @@
             </div>
             <div class="item-content">
               <h4>Segurança Total (B2B)</h4>
-              <p>Entregas apenas para Empresas Cadastradas (CNPJs). Ambientes controlados. Geralmente entregas para os mesmos clientes!</p>
+              <p>Entregas só para empresas cadastradas (CNPJ), em ambientes controlados — geralmente para os mesmos clientes!</p>
             </div>
           </div>
           <div class="item-comparacao">
@@ -1661,7 +1150,7 @@
             </div>
             <div class="item-content">
               <h4>Horário Comercial</h4>
-              <p>Fature alto de segunda a sexta, durante o dia e tenha Noites e fins de semana livres para dedicar a sua família!</p>
+              <p>Fature alto de segunda a sexta, durante o dia. Noites e fins de semana livres para a sua família!</p>
             </div>
           </div>
           <div class="item-comparacao">
@@ -1670,257 +1159,524 @@
             </div>
             <div class="item-content">
               <h4>Suporte Humanizado</h4>
-              <p>Atendimento "Pessoa para Pessoa". Time real focado no seu dia a dia.</p>
+              <p>Atendimento pessoa para pessoa. Time real, focado no seu dia a dia na rua.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- COMO FUNCIONA -->
+
+  <!-- ============ DEPOIMENTOS ============ -->
+  <section class="depoimentos" id="depoimentos">
+    <h2 class="section-title animate-on-scroll">Quem roda, <span class="destaque">recomenda</span></h2>
+    <p class="section-subtitle animate-on-scroll">Palavra de quem já trocou a correria pelo faturamento com horário</p>
+
+    <div class="depoimentos-grid">
+      <div class="depoimento-card animate-on-scroll">
+        <span class="stars" aria-label="5 estrelas">★★★★★</span>
+        <p class="depoimento-texto">"Antes eu rodava até 23h entregando comida e mal via meus filhos. Hoje fecho o dia às 18h e ainda fatura mais. Melhor troca que fiz."</p>
+        <div class="depoimento-autor">
+          <div class="avatar" aria-hidden="true">M</div>
+          <div class="autor-info">
+            <strong>Marcos A.</strong>
+            <span>Entregador parceiro · Salvador/BA</span>
+            <span class="badge-verificado"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm-1 14l-4-4 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/></svg> Parceiro verificado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card animate-on-scroll">
+        <span class="stars" aria-label="5 estrelas">★★★★★</span>
+        <p class="depoimento-texto">"O que me ganhou foi o saque imediato. Precisei trocar o pneu da moto no meio da semana, saquei na hora e resolvi. Isso não existe em outro app."</p>
+        <div class="depoimento-autor">
+          <div class="avatar" style="background:linear-gradient(135deg,#7a1a9e,#f37601)" aria-hidden="true">J</div>
+          <div class="autor-info">
+            <strong>Jefferson S.</strong>
+            <span>Entregador parceiro · São Paulo/SP</span>
+            <span class="badge-verificado"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm-1 14l-4-4 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/></svg> Parceiro verificado</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="depoimento-card animate-on-scroll">
+        <span class="stars" aria-label="5 estrelas">★★★★★</span>
+        <p class="depoimento-texto">"Entregar para loja é outro nível. Todo mundo te conhece, a peça é segurada e o suporte responde gente como gente. Trabalho com respeito."</p>
+        <div class="depoimento-autor">
+          <div class="avatar" style="background:linear-gradient(135deg,#f37601,#3d0556)" aria-hidden="true">C</div>
+          <div class="autor-info">
+            <strong>Carlos E.</strong>
+            <span>Entregador parceiro · Goiânia/GO</span>
+            <span class="badge-verificado"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3zm-1 14l-4-4 1.41-1.41L11 13.17l4.59-4.58L17 10l-6 6z"/></svg> Parceiro verificado</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COMO FUNCIONA ============ -->
   <section class="como-funciona" id="como-funciona">
-    <h2 class="section-title animate-on-scroll">Como Funciona</h2>
-    <p class="section-subtitle animate-on-scroll">Em 3 passos simples você começa a ganhar!</p>
-    
+    <h2 class="section-title animate-on-scroll">Como <span class="destaque">funciona</span></h2>
+    <p class="section-subtitle animate-on-scroll">Em 3 passos simples você começa a ganhar</p>
+
     <div class="steps-container">
       <div class="step animate-on-scroll">
         <div class="step-number">1</div>
         <div class="step-content">
-          <h3>Baixe o App e Cadastre-se</h3>
-          <p>Baixe o aplicativo Tutts Profissional na Play Store, faça seu cadastro com seus dados e documentos. É rápido e gratuito!</p>
+          <h3>Baixe o app e cadastre-se</h3>
+          <p>Baixe o Tutts Profissional na Play Store e envie seus dados e documentos direto pelo celular. É gratuito.</p>
+          <span class="step-tempo">⏱️ Leva menos de 5 minutos</span>
         </div>
       </div>
-      
+
       <div class="step animate-on-scroll">
         <div class="step-number">2</div>
         <div class="step-content">
-          <h3>Aguarde a Aprovação</h3>
-          <p>Nossa equipe vai analisar seu cadastro. Assim que aprovado, você receberá uma notificação e já pode começar a rodar!</p>
+          <h3>Aguarde a aprovação</h3>
+          <p>Nossa equipe analisa seu cadastro e te avisa por notificação assim que estiver liberado para rodar.</p>
+          <span class="step-tempo">📲 Você recebe notificação</span>
         </div>
       </div>
-      
+
       <div class="step animate-on-scroll">
         <div class="step-number">3</div>
         <div class="step-content">
-          <h3>Comece a Ganhar!</h3>
-          <p>Fique online no app, aceite as corridas e faça suas entregas. Acompanhe seus ganhos em tempo real e saque quando quiser!</p>
+          <h3>Comece a ganhar!</h3>
+          <p>Fique online, aceite as corridas e acompanhe seus ganhos em tempo real. Saque quando quiser — o Pix cai na hora.</p>
+          <span class="step-tempo">💰 Dinheiro na conta via Pix</span>
         </div>
       </div>
     </div>
   </section>
-  
-  <!-- REGIÕES -->
+
+  <!-- ============ REGIÕES ============ -->
   <section class="regioes" id="regioes">
-    <h2 class="section-title animate-on-scroll">Onde Atuamos</h2>
-    <p class="section-subtitle animate-on-scroll">Estamos expandindo por todo o Brasil!</p>
-    
-    <div class="regioes-grid">
-      <div class="regiao-tag animate-on-scroll">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+    <h2 class="section-title animate-on-scroll">Onde <span class="destaque">atuamos</span></h2>
+    <p class="section-subtitle animate-on-scroll">Estamos expandindo por todo o Brasil — veja se a sua cidade já está no mapa</p>
+
+    <div class="regioes-grid" id="regioes-grid">
+      <span class="regiao-tag animate-on-scroll">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Todo Nordeste
-      </div>
-      <div class="regiao-tag animate-on-scroll">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </span>
+      <span class="regiao-tag animate-on-scroll">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         São Paulo
-      </div>
-      <div class="regiao-tag animate-on-scroll">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </span>
+      <span class="regiao-tag animate-on-scroll">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Campinas
-      </div>
-      <div class="regiao-tag animate-on-scroll">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </span>
+      <span class="regiao-tag animate-on-scroll">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Brasília
-      </div>
-      <div class="regiao-tag animate-on-scroll">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </span>
+      <span class="regiao-tag animate-on-scroll">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         Goiânia
-      </div>
+      </span>
     </div>
-    
+
     <div class="regioes-image-container animate-on-scroll">
-      <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Untitled-1%20(1).png?raw=true" alt="Mapa de atuação Tutts" class="regioes-image">
+      <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Untitled-1%20(1).png?raw=true" alt="Mapa de atuação Tutts" class="regioes-image" loading="lazy">
     </div>
   </section>
-  
-  <!-- CTA FINAL -->
+
+  <!-- ============ FAQ ============ -->
+  <section class="faq-section" id="faq">
+    <h2 class="section-title animate-on-scroll">Perguntas <span class="destaque">frequentes</span></h2>
+    <p class="section-subtitle animate-on-scroll">Tudo o que você precisa saber antes de começar</p>
+
+    <div class="faq-container">
+      <details class="faq-item animate-on-scroll">
+        <summary>
+          Preciso pagar algo para me cadastrar?
+          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <p class="faq-resposta"><strong>Não.</strong> O cadastro é 100% gratuito. Você baixa o app, envia seus documentos e aguarda a aprovação — sem taxa de adesão, mensalidade ou pegadinha.</p>
+      </details>
+
+      <details class="faq-item animate-on-scroll">
+        <summary>
+          Qualquer moto serve?
+          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <p class="faq-resposta">É necessário ter moto com <strong>baú ou caixote</strong>, pois as autopeças precisam ser transportadas com segurança. Além disso, documentação da moto e CNH precisam estar em dia.</p>
+      </details>
+
+      <details class="faq-item animate-on-scroll">
+        <summary>
+          Como e quando recebo meu dinheiro?
+          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <p class="faq-resposta">Você acompanha seus ganhos em tempo real no app e saca <strong>via Pix quando quiser</strong>. Precisando com urgência, o saque cai <strong>imediatamente</strong> na sua conta, via Pix.</p>
+      </details>
+
+      <details class="faq-item animate-on-scroll">
+        <summary>
+          E se acontecer algo com a peça durante a entrega?
+          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <p class="faq-resposta"><strong>Todas as entregas são seguradas.</strong> Em caso de avaria ou imprevisto, o seguro cobre — o prejuízo não sai do seu bolso. É só acionar o suporte, que é humano e resolve com você.</p>
+      </details>
+
+      <details class="faq-item animate-on-scroll">
+        <summary>
+          Posso trabalhar em outros apps ao mesmo tempo?
+          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <p class="faq-resposta">Você é um <strong>parceiro independente</strong> e organiza sua rotina. Muitos motoboys começam conciliando e, quando veem o faturamento no horário comercial, passam a rodar só com a Tutts.</p>
+      </details>
+
+      <details class="faq-item animate-on-scroll">
+        <summary>
+          Minha cidade ainda não apareceu na lista. E agora?
+          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </summary>
+        <p class="faq-resposta">Estamos <strong>expandindo rápido</strong> por todo o Brasil. Faça o cadastro mesmo assim: quando abrirmos na sua região, você será um dos primeiros avisados — e quem chega primeiro pega as melhores demandas.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
   <section class="cta-final">
     <h2 class="section-title animate-on-scroll">Pronto para mudar de vida?</h2>
-    <p class="animate-on-scroll">Junte-se a centenas de entregadores que já estão ganhando dinheiro com a Tutts!</p>
-    
-    <div class="cta-buttons">
-      <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn btn-primary" target="_blank" data-fbq-event="Lead" data-fbq-location="Download App CTA Final">
+    <p class="animate-on-scroll">Junte-se às centenas de entregadores que já faturam com horário comercial e fim de semana livre.</p>
+
+    <div class="cta-urgencia animate-on-scroll" id="cta-urgencia">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span id="cta-urgencia-texto">Vagas limitadas por região — garanta a sua</span>
+    </div>
+
+    <div class="cta-buttons animate-on-scroll">
+      <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn btn-primary btn-shine" target="_blank" data-fbq-event="Lead" data-fbq-location="Download App CTA Final">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
         Baixar o App Agora
       </a>
-      
+
       <a href="#" class="btn btn-whatsapp whatsapp-dinamico" target="_blank" data-fbq-event="Lead" data-fbq-location="CTA Final">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Falar no WhatsApp
       </a>
     </div>
   </section>
-  
-  <!-- FOOTER -->
+
+  <!-- ============ FOOTER ============ -->
   <footer class="footer">
-    <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true" alt="Tutts" class="footer-logo">
-    <p>© 2024 Tutts - Todos os direitos reservados</p>
+    <img src="https://github.com/Leonardodevcloud/tutts-landing/blob/main/Post%20para%20LinkedIn%20de%20Cria%C3%A7%C3%A3o%20R%C3%A1pida%20Liquida%C3%A7%C3%A3o%20Org%C3%A2nico%20Verde%20Laranja%20(1).png?raw=true" alt="Tutts" class="footer-logo" loading="lazy">
+    <p>© 2026 Tutts — Todos os direitos reservados</p>
     <p style="margin-top: 10px;">
       <a href="#" class="whatsapp-dinamico" data-fbq-event="Lead" data-fbq-location="Footer">WhatsApp: (11) 93360-3400</a>
     </p>
   </footer>
-  
-  <!-- Scroll Animation Script -->
+
+  <!-- ============ WHATSAPP FLUTUANTE ============ -->
+  <a href="#" class="wpp-float whatsapp-dinamico" target="_blank" aria-label="Falar no WhatsApp" data-fbq-event="Lead" data-fbq-location="WhatsApp Flutuante">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  </a>
+
+  <!-- ============ BARRA CTA STICKY ============ -->
+  <div class="sticky-cta" id="sticky-cta">
+    <div class="sticky-cta-info">
+      <div class="valor">R$ 1.000+/semana</div>
+      <div class="desc" id="sticky-desc">Vagas abertas · Cadastro grátis</div>
+    </div>
+    <a href="https://play.google.com/store/apps/details?id=com.tutts.motoboy&pcampaignid=web_share" class="btn btn-primary" target="_blank" data-fbq-event="Lead" data-fbq-location="Download App Sticky">
+      Baixar o App
+    </a>
+  </div>
+
+  <!-- ============ SCRIPTS ============ -->
   <script>
-    // Intersection Observer for scroll animations
+    // ========================================
+    // ANIMAÇÕES DE SCROLL
+    // ========================================
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Stagger animation
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, index * 100);
+          }, index * 90);
+          observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    
-    // Observe all animated elements
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-    
-    // Smooth scroll for anchor links (ignora links externos)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        // Ignora se não for âncora válida ou se foi atualizado para URL externa
-        if (!href || href === '#' || href.startsWith('http') || href.startsWith('https')) {
-          return;
-        }
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // ========================================
+    // BARRA DE PROGRESSO DE LEITURA
+    // ========================================
+    const progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      progressBar.style.width = pct + '%';
+    }, { passive: true });
+
+    // ========================================
+    // CONTADORES ANIMADOS (count-up)
+    // ========================================
+    function animarContador(el) {
+      const alvo = parseInt(el.dataset.alvo, 10);
+      const prefixo = el.dataset.prefixo || '';
+      const duracao = 1400;
+      const inicio = performance.now();
+
+      function frame(agora) {
+        const progresso = Math.min((agora - inicio) / duracao, 1);
+        // ease-out cúbico — desacelera no final (mais satisfatório)
+        const eased = 1 - Math.pow(1 - progresso, 3);
+        const valor = Math.round(alvo * eased);
+        el.textContent = prefixo + valor.toLocaleString('pt-BR');
+        if (progresso < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    const contadorObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animarContador(entry.target);
+          contadorObserver.unobserve(entry.target);
         }
       });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.count-up').forEach(el => contadorObserver.observe(el));
+
+    // ========================================
+    // TICKER DE ATIVIDADE (prova social viva)
+    // ========================================
+    const ATIVIDADES = [
+      ['Marcos', 'Salvador/BA', 'sacou <strong>R$ 340</strong> agora há pouco'],
+      ['Jefferson', 'São Paulo/SP', 'concluiu <strong>14 entregas</strong> hoje'],
+      ['Carla', 'Goiânia/GO', 'foi aprovada e já está rodando'],
+      ['Rodrigo', 'Recife/PE', 'sacou <strong>R$ 520</strong> via Pix'],
+      ['André', 'Brasília/DF', 'bateu <strong>R$ 1.200</strong> essa semana'],
+      ['Felipe', 'Campinas/SP', 'concluiu <strong>11 entregas</strong> hoje'],
+      ['Thiago', 'Fortaleza/CE', 'acabou de se cadastrar'],
+      ['Diego', 'Feira de Santana/BA', 'sacou <strong>R$ 280</strong> na hora'],
+    ];
+
+    const tickerEl = document.getElementById('ticker');
+    function montarTicker() {
+      const itens = ATIVIDADES.map(([nome, cidade, acao]) =>
+        `<span class="ticker-item"><span class="dot-ok"></span>${nome} · ${cidade} — ${acao}</span>`
+      ).join('');
+      // Duplicado para o loop do keyframe (translateX -50%) ser contínuo
+      tickerEl.innerHTML = itens + itens;
+    }
+    montarTicker();
+
+    // ========================================
+    // SIMULADOR DE GANHOS
+    // ========================================
+    const TAXA_MEDIA = 15;   // R$ por entrega
+    const DIAS_SEMANA = 5;
+    const SEMANAS_MES = 4;
+
+    const simSlider = document.getElementById('sim-entregas');
+    const simOut = document.getElementById('sim-entregas-out');
+    const simSemana = document.getElementById('sim-semana');
+    const simMes = document.getElementById('sim-mes');
+
+    function formatarBRL(valor) {
+      return 'R$ ' + valor.toLocaleString('pt-BR');
+    }
+
+    function atualizarSimulador() {
+      const entregas = parseInt(simSlider.value, 10);
+      const semana = entregas * TAXA_MEDIA * DIAS_SEMANA;
+      const mes = semana * SEMANAS_MES;
+
+      simOut.textContent = entregas;
+      simSemana.textContent = formatarBRL(semana);
+      simMes.textContent = formatarBRL(mes);
+
+      // Preenche a trilha do slider até o polegar
+      const pct = ((entregas - simSlider.min) / (simSlider.max - simSlider.min)) * 100;
+      simSlider.style.setProperty('--fill', pct + '%');
+
+      // Vibração sutil no mobile (feedback tátil)
+      if (navigator.vibrate) navigator.vibrate(4);
+    }
+
+    simSlider.addEventListener('input', atualizarSimulador);
+    atualizarSimulador();
+
+    // Tracking: usuário interagiu com o simulador (sinal de intenção)
+    let simuladorTrackeado = false;
+    simSlider.addEventListener('change', () => {
+      if (!simuladorTrackeado && typeof fbq !== 'undefined') {
+        fbq('trackCustom', 'SimuladorGanhos', {
+          entregas_dia: simSlider.value,
+          regiao: getNomeRegiaoTracking(REGIAO_ATUAL)
+        });
+        simuladorTrackeado = true;
+      }
     });
-    
-    // Autoplay video when section is visible
+
+    // ========================================
+    // BARRA CTA STICKY — aparece depois do hero
+    // ========================================
+    const stickyCta = document.getElementById('sticky-cta');
+    const heroSection = document.querySelector('.hero');
+
+    const stickyObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        stickyCta.classList.toggle('visivel', !entry.isIntersecting);
+      });
+    }, { threshold: 0.05 });
+    stickyObserver.observe(heroSection);
+
+    // ========================================
+    // VÍDEO — autoplay + som
+    // ========================================
     const videoElement = document.getElementById('video-tutts');
     if (videoElement) {
-      // Força o muted para garantir autoplay
       videoElement.muted = true;
-      
+
       const playVideo = () => {
         const playPromise = videoElement.play();
         if (playPromise !== undefined) {
-          playPromise.catch(error => {
-            console.log('Autoplay bloqueado:', error);
-          });
+          playPromise.catch(error => console.log('Autoplay bloqueado:', error));
         }
       };
-      
+
       const videoObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            playVideo();
-          } else {
-            videoElement.pause();
-          }
+          if (entry.isIntersecting) { playVideo(); }
+          else { videoElement.pause(); }
         });
       }, { threshold: 0.3 });
-      
       videoObserver.observe(videoElement);
-      
-      // Tenta dar play também no primeiro toque na tela
+
       document.addEventListener('touchstart', function onFirstTouch() {
         playVideo();
         document.removeEventListener('touchstart', onFirstTouch);
       }, { once: true });
     }
-    
-    // Botão de ativar/desativar som
+
     const btnSom = document.getElementById('btn-som');
-    const iconMuted = btnSom.querySelector('.icon-muted');
-    const iconSound = btnSom.querySelector('.icon-sound');
-    const btnTexto = btnSom.querySelector('.btn-texto');
-    
-    btnSom.addEventListener('click', function() {
-      if (videoElement.muted) {
-        videoElement.muted = false;
-        iconMuted.style.display = 'none';
-        iconSound.style.display = 'block';
-        btnTexto.textContent = 'Som Ativado';
-        btnSom.classList.add('som-ativo');
-      } else {
-        videoElement.muted = true;
-        iconMuted.style.display = 'block';
-        iconSound.style.display = 'none';
-        btnTexto.textContent = 'Ativar Som';
-        btnSom.classList.remove('som-ativo');
-      }
+    if (btnSom && videoElement) {
+      const iconMuted = btnSom.querySelector('.icon-muted');
+      const iconSound = btnSom.querySelector('.icon-sound');
+      const btnTexto = btnSom.querySelector('.btn-texto');
+
+      btnSom.addEventListener('click', function() {
+        if (videoElement.muted) {
+          videoElement.muted = false;
+          iconMuted.style.display = 'none';
+          iconSound.style.display = 'block';
+          btnTexto.textContent = 'Som Ativado';
+          btnSom.classList.add('som-ativo');
+        } else {
+          videoElement.muted = true;
+          iconMuted.style.display = 'block';
+          iconSound.style.display = 'none';
+          btnTexto.textContent = 'Ativar Som';
+          btnSom.classList.remove('som-ativo');
+        }
+      });
+    }
+
+    // ========================================
+    // SCROLL SUAVE (âncoras internas)
+    // ========================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('http')) return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
     });
   </script>
-  <!-- Facebook Pixel Click Tracking + Regiões Dinâmicas -->
+
+  <!-- Facebook Pixel Click Tracking + Personalização por Região -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      
+
+      const nomeRegiao = getNomeRegiaoTracking(REGIAO_ATUAL);
+      const regiaoValida = REGIAO_ATUAL && REGIOES_CONFIG[REGIAO_ATUAL];
+
       // ========================================
-      // 1. ATUALIZAR LINKS DE WHATSAPP COM REGIÃO
+      // 1. PERSONALIZAÇÃO POR REGIÃO (relevância = conversão)
+      // ========================================
+      if (regiaoValida) {
+        const regiao = REGIOES_CONFIG[REGIAO_ATUAL];
+
+        // Badge do hero
+        const badgeRegiao = document.getElementById('badge-regiao');
+        if (badgeRegiao) {
+          badgeRegiao.innerHTML = `Vagas abertas em <strong>${regiao.nome} · ${regiao.estado}</strong>`;
+        }
+
+        // Urgência no CTA final
+        const ctaUrgenciaTexto = document.getElementById('cta-urgencia-texto');
+        if (ctaUrgenciaTexto) {
+          ctaUrgenciaTexto.textContent = `Vagas limitadas em ${regiao.nome} — garanta a sua`;
+        }
+
+        // Barra sticky
+        const stickyDesc = document.getElementById('sticky-desc');
+        if (stickyDesc) {
+          stickyDesc.textContent = `Vagas em ${regiao.nome} · Cadastro grátis`;
+        }
+
+        // Destaca a região no grid (se existir tag correspondente)
+        document.querySelectorAll('#regioes-grid .regiao-tag').forEach(tag => {
+          if (tag.textContent.trim().toUpperCase().includes(regiao.nome)) {
+            tag.classList.add('regiao-ativa');
+          }
+        });
+
+        console.log('🎯 Região detectada:', regiao.nome);
+      } else {
+        console.log('ℹ️ Nenhuma região na URL, usando conteúdo padrão');
+      }
+
+      // ========================================
+      // 2. LINKS DE WHATSAPP DINÂMICOS
       // ========================================
       const whatsappLinks = document.querySelectorAll('.whatsapp-dinamico');
       const linkWhatsApp = gerarLinkWhatsApp(REGIAO_ATUAL);
-      
+
       whatsappLinks.forEach(function(link) {
         link.href = linkWhatsApp;
         if (link.getAttribute('target') !== '_blank') {
           link.setAttribute('target', '_blank');
         }
       });
-      
-      // Log da região detectada
-      if (REGIAO_ATUAL && REGIOES_CONFIG[REGIAO_ATUAL]) {
-        console.log('🎯 Região detectada:', REGIOES_CONFIG[REGIAO_ATUAL].nome);
-        console.log('📱 Link WhatsApp:', linkWhatsApp);
-      } else {
-        console.log('ℹ️ Nenhuma região na URL, usando mensagem padrão');
-      }
-      
+
       // ========================================
-      // 2. TRACKING DE CLIQUES COM REGIÃO
+      // 3. TRACKING DE CLIQUES COM REGIÃO
       // ========================================
       const trackedLinks = document.querySelectorAll('[data-fbq-event]');
-      const nomeRegiao = getNomeRegiaoTracking(REGIAO_ATUAL);
-      
+
       trackedLinks.forEach(function(link) {
         link.addEventListener('click', function(e) {
           const eventName = this.getAttribute('data-fbq-event');
-          const location = this.getAttribute('data-fbq-location') || this.getAttribute('data-fbq-content') || 'Botão';
+          const location = this.getAttribute('data-fbq-location') || 'Botão';
           const url = this.href;
           const isNewTab = this.getAttribute('target') === '_blank';
-          
-          // Só previne default se tiver uma URL válida
+
           if (url && url !== '#' && !url.endsWith('#')) {
             e.preventDefault();
           }
-          
-          // Content name inclui localização + região
+
           const contentName = location + ' - ' + nomeRegiao;
-          
-          // Dispara o evento do Facebook Pixel
+
           if (typeof fbq !== 'undefined') {
             fbq('track', eventName, {
               content_name: contentName,
               content_category: nomeRegiao
             });
-            
             console.log('📊 FB Pixel Event:', eventName, contentName);
           }
-          
-          // Aguarda 300ms para garantir que o evento foi enviado
+
           if (url && url !== '#' && !url.endsWith('#')) {
             setTimeout(function() {
               if (isNewTab) {
@@ -1932,17 +1688,38 @@
           }
         });
       });
-      
+
       // ========================================
-      // 3. TRACKING DE PAGEVIEW COM REGIÃO
+      // 4. PAGEVIEW COM REGIÃO
       // ========================================
-      if (typeof fbq !== 'undefined' && REGIAO_ATUAL) {
-        fbq('trackCustom', 'PageViewRegiao', {
-          regiao: nomeRegiao
-        });
+      if (typeof fbq !== 'undefined' && regiaoValida) {
+        fbq('trackCustom', 'PageViewRegiao', { regiao: nomeRegiao });
         console.log('📊 FB Pixel PageView Região:', nomeRegiao);
       }
-      
+
+      // ========================================
+      // 5. TRACKING DE PROFUNDIDADE DE SCROLL
+      // (mede engajamento real p/ otimizar campanhas)
+      // ========================================
+      const marcos = { 25: false, 50: false, 75: false, 100: false };
+      window.addEventListener('scroll', function() {
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if (docHeight <= 0) return;
+        const pct = (window.scrollY / docHeight) * 100;
+
+        Object.keys(marcos).forEach(function(marco) {
+          if (!marcos[marco] && pct >= parseInt(marco, 10)) {
+            marcos[marco] = true;
+            if (typeof fbq !== 'undefined') {
+              fbq('trackCustom', 'ScrollDepth', {
+                profundidade: marco + '%',
+                regiao: nomeRegiao
+              });
+            }
+          }
+        });
+      }, { passive: true });
+
     });
   </script>
 </body>
